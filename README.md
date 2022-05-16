@@ -12,6 +12,7 @@ participante del grupo la IA de diferentes agentes como:
         1-Pastan/Merodean
         2-Si abre establo se escapa
         3-Huyen del lobo si este se acerca
+        4-Siguen al perro
     -Lobo:
         1-Ataca a las obejas por la noche
         2-Huye del granjero y del perro
