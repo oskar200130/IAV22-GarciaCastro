@@ -7,23 +7,37 @@ Oscar García Castro
 
 El proyecto consistirá en una escena con agentes inteligentes(estilo práctica del fantasma de la ópera) haciendo cada
 participante del grupo la IA de diferentes agentes como:
-    -Granjero: 
-        -Alimentar animales
-        -Cuidar huertos
-        -Encerrar animales que se escapan
-    -Animales de granja:
-        -Necesidad de comer
-        -Comportamientos de grupo
-        -Pueden escaparse
+    
+    -Oveja:
+        1-Pastan/Merodean
+        2-Si abre establo se escapa
+        3-Huyen del lobo si este se acerca
     -Lobo:
-        -Ataca por las noches
-        -Se aleja si granjero o perro le detectan
-        -Durante el día merodea/duerme alrededor de la granja
-    -Ciclo día/noche:
-        -Afectan sobre el comportamiento de los agentes(se van a dormir, atacan, etc.)
-    -Perro guardián:
-        -Vigila por la noce a los animales para que el lobo no les ataque
-        -Merodea, come y bebe
+        1-Ataca a las obejas por la noche
+        2-Huye del granjero y del perro
+        3-Se lleva a las ovejas -> Reduce velocidad
+        4-Las suelta si el perro/granjero se le acercan
+    -Perro:
+        1-Cuando salen las ovejas a pastar las dirige
+        2-Merodea en una zona durante el resto del día
+        3-Duerme por la noche -> Se despierta si la gallina hace ruido
+        4-Persigue al lobo o a la gallina
+        5-Si ve a una obeja irse va a por ella y la trae de vuelta
+    -Granjero:
+        1-Se levanta
+        2-Huerto
+        3-Abrir/cerrar ovejas
+        4-Paradiña para comer
+        5-Alimentar a los cerdos/vacas
+        6-Se duerme
+        7-Si haces ruido en x sitios se levanta y va a por el lobo -> Si no hay lobo se vuelve a la cama
+    -Gallina:
+        1-Hace ruido
+        2-Abrir puertas de día
+        3-Robar comida de los animales
+        4-Tirar la comida por el escenario
+        5-Romper el huerto
+    -Dia/Noche
 
 La naveción y comportamientos de los agentes funcionarán con máquinas de estados y/o árboles de comportamiento, además 
 de otros algoritmos del libro "AI for Games" de Ian Millington para que cada agente tenga comportamientos propios.
