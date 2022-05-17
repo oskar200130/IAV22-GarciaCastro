@@ -59,6 +59,8 @@ sin tener que seguir a la gallina, y después interceptará al lobo de la misma 
 ### Escenario
 Aquí explicaremos con la ayuda de un diagrama, cómo está distribuído el mapa, para implementarlo por zonas usaremos el NavMesh que proporciona Unity (igual que en la práctica del fantasma de la ópera).
 
+![alt text](https://raw.githubusercontent.com/oskar200130/IAV22-GarciaCastro/main/ImagenesDocu/DiagramaMapa.png)
+
 Todas las areas están conectadas directamente, los únicos puntos críticos són las vallas que separan la zona de la granja del campo de pastar, pues sólo se puede acceder por esas 2 puertas.
 
 También hay que tener en cuenta de que no todos los agentes pueden acceder a todas las zonas, el perro, le granjero y la gallina sí que pueden, incluyendo el recinto
@@ -66,6 +68,8 @@ de ovejaas. Sin embargo, las ovejas y el lobo sólo pueden ir del recinto al cam
 
 Por otro lado, el la leyenda de la derecha se ven los puntos de interacción que puede usar la gallina, los de sonido y la puerta están fijos siempre, pero los de comida se pueden desplazar pues son la comida de los cerdos, aunque al comenzar cada día volverán a aparecer en su zona inicial.  
 Respecto a los puntos de sonido, los 3 de arriba son los necesarios para desperar al granjero por la noche, el de abajo es exclusivamente para el perro.
+
+Faltaría en ese diagrama poner un punto en el huerto, donde la gallina puede pisarlo.
 
 ## Granjero
 Como ya hemos dicho antes, el granjero será el agente más complejo, seguirá una rutina bastante larga durante el día que podrá interrumpir la gallina desde diferentes puntos y por la noche dormirá pero estará alerta por el lobo.
@@ -100,6 +104,7 @@ Las acciones de la rutina serán las siguientes:
     
 ### Implementación
 Para implementar estos comportamientos, hemos decidido usar un árbol de comportamientos, aquí proponemos una solucíon:
+![alt text](https://github.com/oskar200130/IAV22-GarciaCastro/blob/main/ImagenesDocu/GranjeroDT.png)
 
 
 ## Huerto
@@ -116,6 +121,7 @@ El huerto será el agente más simple, podrá tener 3 estados, sin regar, regado
     
 ### Implementación
 Para implementar el huerto hemos propuesto una solucíon por máquina de estados, pues es más sencillo de implementar:
+![alt text](https://raw.githubusercontent.com/oskar200130/IAV22-GarciaCastro/main/ImagenesDocu/HuertoSM.png)
 
 
 ## Ovejas 
@@ -147,6 +153,7 @@ además de la cueva del lobo. No podrán pasar la valla que conecta con el resto
     
 ### Implementación
 También hemos pensado en una máquina de estados:
+![alt text](https://raw.githubusercontent.com/oskar200130/IAV22-GarciaCastro/main/ImagenesDocu/OvejaSM.png)
 
 
 ## Lobo 
@@ -163,6 +170,7 @@ El lobo será un agente que sólo trabaja de noche, por el día duerme en su cue
     
 ### Implementación
 También hemos pensado en una máquina de estados:
+![alt text](https://raw.githubusercontent.com/oskar200130/IAV22-GarciaCastro/main/ImagenesDocu/LoboSM.png)
 
 
 ## Perro 
@@ -187,6 +195,7 @@ El último agente que queda por comentar paso a paso es el perro.
     
 ### Implementación
 También hemos pensado en una máquina de estados:
+![alt text](https://raw.githubusercontent.com/oskar200130/IAV22-GarciaCastro/main/ImagenesDocu/perroSM.png)
 
 
 
