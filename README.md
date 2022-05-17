@@ -198,4 +198,10 @@ También hemos pensado en una máquina de estados:
 ![alt text](https://raw.githubusercontent.com/oskar200130/IAV22-GarciaCastro/main/ImagenesDocu/perroSM.png)
 
 
+## REFERENCIAS Y ASSETS
+https://sketchfab.com/3d-models/chicken-rigged-6e3b93c078114c52bfe4cfa08b9843eb
+https://sketchfab.com/3d-models/low-poly-sheep-20ef523bee784e4a939b4c5f8734edfc
+https://sketchfab.com/3d-models/farmer-low-poly-2d913738203a49dfb4b30e7f4633e75f
+
+
 
