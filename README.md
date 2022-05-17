@@ -37,9 +37,7 @@ Cuando el perro no esté pendiente de las ovejas, deambulará por su caseta.
 El lobo por el día simplemente dormirá en su cueva sin intervenir en la granja.
 
 Y finalmente tenemos al jugador, a la gallina, que, como hemos mencionado antes, podrá interactuar con el escenario para modificar las rutinas del resto de agentes.
-En concreto podrá pisotear el huerto para que le granjero corte lo que esté haciendo y tenga que ir a arreglarlo, abrirá la puerta de las ovejas para que alguna
-se pueda escapar y el perro tenga que ir a por ella y podrá esconder la comida de los cerdos (bloques de paja) para que el granjero tenga que ir a buscarla antes de darles
-de comer.
+En concreto podrá pisotear el huerto para que le granjero corte lo que esté haciendo y tenga que ir a arreglarlo, abrirá la puerta de las ovejas para que alguna se pueda escapar y el perro tenga que ir a por ella y podrá esconder la comida de los cerdos (bloques de paja) para que el granjero tenga que ir a buscarla antes de darles de comer.
 
 ### -Noche
 Por la noche las cosas cambian un poco.
@@ -86,49 +84,109 @@ Las acciones de la rutina serán las siguientes:
     
     La gallina puede interrumpir estas acciones de manera inmediata:
     - Si la gallina pisotea el huerto, el granjero volverá al huerto a arreglarlo y luego seguirá con la tarea que tenga que realizar.
-    - Cuando vaya a alimentar a los cerdos, la comida puede estar en el sitio habitual o en otro sitio porque la ha movido la gallina, en ese caso, deberá ir       a buscar la comida antes de darles de comer.
+    - Cuando vaya a alimentar a los cerdos, la comida puede estar en el sitio habitual o en otro sitio porque la ha movido la gallina, en ese caso, 
+    deberá ir a buscar la comida antes de darles de comer.
+    - Si se escapa una gallina, cuando el perro venga de rescatarla, el granjero deberá ir a cerrar otra vez la puerta del recinto.
+    
 ### + Noche +
     
-    Mientras duerme, el granjero se podrá despertar si la gallina hace ruido, en concreto si activa los 3 generadores de ruido alrededor de la casa, cuando       ocurra, pueden pasar 2 cosas:
-    -Si el lobo está en el recinto de las ovejas o directamente ya se ha llevado una, el granjero correrá de manera automática hacia donde esté el lobo
+    Mientras duerme, el granjero se podrá despertar si la gallina hace ruido, en concreto si activa los 3 generadores 
+    de ruido alrededor de la casa, cuando ocurra, pueden pasar 3 cosas:
     
+    - Si el lobo está en el recinto de las ovejas o directamente ya se ha llevado una, el granjero correrá de manera automática hacia donde esté el lobo.
+    Cuando intercepta al lobo, devuelve la oveja de la mano al recinto y si la puerta está abierta (por la gallina), la vuelve a cerrar.
+    - Si el lobo no está en el recinto, irá a cerrar la puerta de las ovejas si está abierta.
+    - Si no está abierta ni está el lobo, entonces se volverá a meter a casa.
     
-    
-    
-    -Oveja:
-        1-Pastan/Merodean
-        2-Si abre establo se escapa
-        3-Huyen del lobo si este se acerca
-        4-Siguen al perro
-    -Lobo:
-        1-Ataca a las obejas por la noche
-        2-Huye del granjero y del perro
-        3-Se lleva a las ovejas -> Reduce velocidad
-        4-Las suelta si el perro/granjero se le acercan
-    -Perro:
-        1-Cuando salen las ovejas a pastar las dirige
-        2-Merodea en una zona durante el resto del día
-        3-Duerme por la noche -> Se despierta si la gallina hace ruido
-        4-Persigue al lobo o a la gallina
-        5-Si ve a una obeja irse va a por ella y la trae de vuelta
-    -Granjero:
-        1-Se levanta
-        2-Huerto
-        3-Abrir/cerrar ovejas
-        4-Paradiña para comer
-        5-Alimentar a los cerdos/vacas
-        6-Se duerme
-        7-Si haces ruido en x sitios se levanta y va a por el lobo -> Si no hay lobo se vuelve a la cama
-    -Gallina:
-        1-Hace ruido
-        2-Abrir puertas de día
-        3-Robar comida de los animales
-        4-Tirar la comida por el escenario
-        5-Romper el huerto
-    -Dia/Noche
+### Implementación
+Para implementar estos comportamientos, hemos decidido usar un árbol de comportamientos, aquí proponemos una solucíon:
 
-La naveción y comportamientos de los agentes funcionarán con máquinas de estados y/o árboles de comportamiento, además 
-de otros algoritmos del libro "AI for Games" de Ian Millington para que cada agente tenga comportamientos propios.
 
-Todos los rasgos enumerados de los agentes no son completamente definitivos, podrían modificarse o incluso eliminarse
-o ampliarse.
+## Huerto
+El huerto será el agente más simple, podrá tener 3 estados, sin regar, regado y pisoteado.
+
+    - Al inicio, lo normal es que el huerto esté "Sin regar".
+    - El granjero deberá venir a regarlo para pasarlo al estado "Regado".
+    - Se mantiene todo el día y la noche en "Regado", hasta que empieza el nuevo día y vuelve a "Sin regar". 
+    
+    La gallina puede interrumpir estos estados:
+    - Si la gallina se acerca a pisotear el huerto, independientemente del estado en el que esté, pasará a estado "Pisoteado".
+    - Cuandoel granjero vaya a arreglarlo, el huerto pasará al estado en el que se encontraba anteriormente.
+    
+    
+### Implementación
+Para implementar el huerto hemos propuesto una solucíon por máquina de estados, pues es más sencillo de implementar:
+
+
+## Ovejas 
+Las ovejas serán agentes que tengan tanto comportamientos individuales como en manada.
+
+Para empezar, sus zonas de movimiento a diferencia del resto de agentes, estarán restringidas al propio recinto y al campo de pasto,
+además de la cueva del lobo. No podrán pasar la valla que conecta con el resto de la granja.
+
+### + Día +
+    - El estado por defecto de cada oveja será estar dentro del recinto merodeando con el resto de ovejas.
+    Aquí se usará un algoritmo que tenga en cuenta el resto de ovejas, para crear un comportamiento en manada.
+    - Si es la hora de salir a pastar, las ovejas, también en manada, seguirán al perro por una ruta establecida en el campo de pastar.
+    Saldrán todas del recinto y cuando acabe la ruta, seguirán al perro hasta dentro de nuevo.
+    
+    La gallina puede interrumpir:
+    - Si cuando están dentro del recinto, la gallina abre la puerta, la oveja más cercana a la puerta saldrá del recinto y escapará de él.
+    - Si cuando pasa eso, el perro intercepta a la oveja, esta pasará a ser hija del perro y la llevará de nuevo al recinto,
+    posteriormente el granjero cerrará la puerta.
+    
+### + Noche +
+    Ahora entra el factor lobo:
+    
+    - Las ovejas tendrán el mismo comportamiento que de día, exceptuándo el salir a pastar en manada.
+    - Si el lobo se acerca lo suficiente a una oveja, tanto dentro como fuera del recinto, esta intentará escapar, aunque sin mucho éxito, pues
+    son claramente más lentas que el lobo.
+    - Cuando el lobo la alcanza, esta pasará a ser su "hijo" y se la llevará capturada a la cueva, si el lobo consigue llegar con ella a la cueva, la 
+    oveja pasará al estado "Muerta", efectivamente se la ha comido PEGUI+18.
+    - En las manos del lobo podrán ser salvadas tanto por el perro como por el granjero, trayéndolas de la misma manera al recinto.
+    
+### Implementación
+También hemos pensado en una máquina de estados:
+
+
+## Lobo 
+El lobo será un agente que sólo trabaja de noche, por el día duerme en su cueva.
+
+    - Al comenzar la noche, el lobo buscará la oveja más cercana por si hay alguna escapada por el campo, si no hay ninguna
+    irá directamente al recinto (cuando llega a la valla del recinto la salta).
+    - Al interceptar la oveja que busca, la coge y se la lleva a su cueva, pero con mucha menos velocidad.
+    
+    El granjero y el perro pueden interrumpir sus ataques, estos pueden ir a por el lobo cuando se despiertan, si el lobo está lo suficientemente
+    cerca del recinto o directamente ha capturado una oveja:
+    - Si el lobo está cerca pero sin oveja, cuando cualquiera de los otros 2 agentes estén cerca suyo, el lobo volverá despavorido a su cueva.
+    - Si el lobo está con la oveja, primero se la tendrán que quitar de las manos y después huirá despavorido.
+    
+### Implementación
+También hemos pensado en una máquina de estados:
+
+
+## Perro 
+El último agente que queda por comentar paso a paso es el perro.
+
+### + Día +
+    - Durante el día, el estado normal del perro será estar merodeando por su caseta.
+    - Este estado se interrumpirá en 2 ocasiones:
+        - Si es la hora de pastar y el granjero abre la puerta de las ovejas, el perro deberá ir a la puerta del recinto para atraer a todas las ovejas 
+        y darles un paseo por el campo (será una ruta preestablecida), una vez acaba esa ruta, vuelve al recinto con todas las ovejas y las vuelve a dejar.
+        Luego vuelve a su caseta.
+        - Si se escapa una oveja, el perro va corriendo a por ella, cuando la intercepta, la coge y la mete de vuelta al recinto.
+        
+### + Noche + 
+    Durante la noche, el perro actúa parecido al granjero, duerme y no se despierta a no ser que la gallina active el punto de ruido que hay al 
+    lado de su caseta:
+    - Cuando se despierta, inmediatamente el perro se pone a perseguir a la gallina (no ocurre nada si se chocan).
+    - El anterior comportamiento dura alrededor de 10-15 segundos, si se pasa el tiempo y no ha ocurrido nada, el perro vuelve a la caseta.
+    - Sin embargo, si durante ese tiempo, la gallina lleva al perro hasta el lobo, lo hará huir si no tiene a ninguna oveja o lo perseguirá hasta rescatarla,
+    después traerá la oveja de vuelta.
+    - Si no consigue interceptar al lobo antes de llegar a la cueva, como la oveja muere, el perro se vuelve a la caseta.
+    
+### Implementación
+También hemos pensado en una máquina de estados:
+
+
+
