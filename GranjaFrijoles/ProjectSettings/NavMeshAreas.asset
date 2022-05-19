@@ -11,21 +11,21 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: 
+  - name: Casa
     cost: 1
-  - name: 
+  - name: Huerto
     cost: 1
-  - name: 
+  - name: Perro
     cost: 1
-  - name: 
+  - name: Establo
     cost: 1
-  - name: 
+  - name: Ovejas
     cost: 1
-  - name: 
+  - name: Campo
     cost: 1
-  - name: 
+  - name: Granja
     cost: 1
-  - name: 
+  - name: Cueva
     cost: 1
   - name: 
     cost: 1
