@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     static public GameManager instance;
     
     private bool day = false;
+    private float time = 0.0f;
     [SerializeField]
     GameObject points;
 
