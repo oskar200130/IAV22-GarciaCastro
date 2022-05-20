@@ -22,6 +22,8 @@ public class Huerto_Behaviour : MonoBehaviour
     [SerializeField]
     Transform derPos;
 
+    // Booleano para comprobar si esta pisado el huerto
+    public bool estaPisado = false;
 
     // Start is called before the first frame update
     void Start()
@@ -76,4 +78,10 @@ public class Huerto_Behaviour : MonoBehaviour
         huertoDer = Instantiate(pisado, derPos);
         huertoIz = Instantiate(pisado, izPos);
     }
+
+    public bool estaPisadoComprueba()
+    {
+        return estaPisado;
+    }
+ 
 }

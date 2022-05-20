@@ -89,4 +89,11 @@ public class PolloController : MonoBehaviour
         }
 
     }
+
+    void Interact()
+    {
+
+    }
+
 }
+
