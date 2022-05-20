@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     static public GameManager instance;
     
-    private bool day = true;
+    private bool day = false;
+    [SerializeField]
+    GameObject points;
 
     public void Start()
     {
@@ -16,4 +18,5 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     public bool getDay() { return day; }
+    public GameObject getPoints() { return points; }
 }
