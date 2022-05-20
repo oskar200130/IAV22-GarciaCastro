@@ -4,13 +4,16 @@ using BehaviorDesigner.Runtime.Tasks;
 
 public class IsDay : Conditional
 {
+	private GameManager g;
+	public override void OnStart()
+    {
+		g = GameManager.instance;
+    }
 	public override TaskStatus OnUpdate()
 	{
-		return TaskStatus.Success;
+		if (g.getDay())
+			return TaskStatus.Success;
+		else
+			return TaskStatus.Failure;
 	}
-
-	public bool isDay()
-    {
-		return true;
-    }
 }
