@@ -10,12 +10,13 @@ public class OvejaState : MonoBehaviour
     public bool atrapada { get; set; }
     public bool muerta { get; set; }
 
-    //public bool loboCerca() {
-    //    return false;
-    //}
+    public bool loboCerca()
+    {
+        return false;
+    }
 
-    //public bool doorOpen()
-    //{
-    //    return false;
-    //}
+    public bool doorOpen()
+    {
+        return false;
+    }
 }
