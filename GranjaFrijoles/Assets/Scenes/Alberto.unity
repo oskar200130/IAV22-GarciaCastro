@@ -12441,7 +12441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b1c46e2e2a9b34198c30a16aa8dc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dayDuration: 0
   points: {fileID: 628341209}
+  light: {fileID: 0}
 --- !u!4 &713823174
 Transform:
   m_ObjectHideFlags: 0
@@ -26491,6 +26493,9 @@ MonoBehaviour:
   pisado: {fileID: 2082332973306374166, guid: d6f69674076505a459be6381912e70d0, type: 3}
   izPos: {fileID: 1949687273}
   derPos: {fileID: 1265902261}
+  estaPisado: 0
+  estaRegado: 0
+  estaSeco: 0
 --- !u!1 &1459761174
 GameObject:
   m_ObjectHideFlags: 0
@@ -27333,7 +27338,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493975657}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -30521,7 +30526,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690517327}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -38207,7 +38212,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.6907857e+20, y: 7.713018e+31, z: 44911.445, w: 5.120079}
+  m_BoundingSphereOverride: {x: 4.5918e-41, y: 0, z: 0, w: 2.3877232e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
