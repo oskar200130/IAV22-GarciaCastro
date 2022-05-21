@@ -8,6 +8,7 @@ public class PolloInteract : MonoBehaviour
     public bool sePuedePisar;
     public bool sePuedeAbrir;
     public bool sePuedeCogerComida;
+    public bool sePuedeHacerRuido;
     bool conComida = false;
 
     // Referencia al Huerto
@@ -48,6 +49,11 @@ public class PolloInteract : MonoBehaviour
                 else
                     soltarComida();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GetComponent<AudioSource>().Play();
         }
     }
 
