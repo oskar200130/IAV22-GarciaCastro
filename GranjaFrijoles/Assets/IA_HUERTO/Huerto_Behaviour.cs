@@ -24,13 +24,13 @@ public class Huerto_Behaviour : MonoBehaviour
 
     // Booleano para comprobar si esta pisado el huerto
     public bool estaPisado = false;
+    public bool estaRegado = false;
+    public bool estaSeco = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Instanciamos huertos secos porque es por la mañana
-        huertoIz = Instantiate(seco, izPos);
-        huertoDer = Instantiate(seco, derPos);
+
     }
 
     // Update is called once per frame
