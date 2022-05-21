@@ -5,16 +5,24 @@ using UnityEngine.AI;
 
 public class Lobo : MonoBehaviour
 {
+    public GameObject Cueva;
+
     public bool EsDeDia()
     {
         // Falta el ciclo de día y noche para hacer bien esta comprobación
         return false;
     }
 
+    public void VuelveCueva()
+    {
+
+    }
+
     public bool EnCueva()
     {
-        // Cuando esté el mapa aquí habrá que comprobar si ha llegado a la cueva o no
-        return false;
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(transform.position, out navHit, 2f, NavMesh.AllAreas);
+        return (1 << NavMesh.GetAreaFromName("Cueva") & navHit.mask) != 0;
     }
 
     public bool Visto()
