@@ -227,7 +227,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -287,6 +287,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f66209861224381429b5dec816d9f03d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceWander: 0
+  timeWandering: 0
+  startWander: 0
+  dog: {fileID: 0}
+  lobo: {fileID: 0}
+  anguloVistaHorizontal: 0
+  distanciaVista: 0
 --- !u!195 &4645908338330440237
 NavMeshAgent:
   m_ObjectHideFlags: 0
