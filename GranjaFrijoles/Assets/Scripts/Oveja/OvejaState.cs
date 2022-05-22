@@ -16,8 +16,8 @@ public class OvejaState : MonoBehaviour
     public double distanciaVista;
 
     public bool closestToDoor { get; set; }
-    public bool enEstablo { get; set; }
-    public bool pastar { get; set; }
+    public bool enEstablo { get; set; } = true;
+    public bool pastar { get; set; } = false;
     public bool atrapada { get; set; }
     public bool muerta { get; set; }
     public bool followingDog { get; set; }
@@ -32,15 +32,18 @@ public class OvejaState : MonoBehaviour
     public bool loboCerca()
     {
         Vector3 pos = transform.position;
-        double fwdAngle = Vector3.Angle(transform.forward, lobo.transform.position - pos);
+        Vector3 posLobo = lobo.transform.position;
+        pos.y += 0.5f;
+        posLobo.y += 0.5f;
+        double fwdAngle = Vector3.Angle(transform.forward, posLobo - pos);
 
-        if (fwdAngle < anguloVistaHorizontal && Vector3.Magnitude(pos - lobo.transform.position) <= distanciaVista)
+        if (fwdAngle < anguloVistaHorizontal && Vector3.Magnitude(pos - posLobo) <= distanciaVista)
         {
             RaycastHit vista;
-            if (Physics.Raycast(pos, lobo.transform.position - pos, out vista, Mathf.Infinity) && vista.collider.gameObject == lobo)
+            if (Physics.Raycast(pos, posLobo - pos, out vista, Mathf.Infinity) && vista.collider.gameObject == lobo)
             {
                 return true;
-            };
+            }
         }
         return false;
     }
@@ -97,10 +100,16 @@ public class OvejaState : MonoBehaviour
 
     public void escapeWolf()
     {
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        Vector3 v = transform.position - lobo.transform.position;
-        v.Normalize();
-        if ((rb.velocity + v).magnitude < maxVel)
-            rb.AddForce(v);
+        //pos, posLobo - pos
+
+        //Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        //Vector3 v = transform.position - lobo.transform.position;
+        //v.Normalize();
+        //if ((rb.velocity + v).magnitude < maxVel)
+        //    rb.AddForce(v);
+        Vector3 pos = transform.position;
+        Vector3 posLobo = lobo.transform.position;
+        pos -= posLobo - pos;
+        agente.SetDestination(pos);
     }
 }
