@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject points;
+    [SerializeField]
+    GameObject scenario;
 
     [SerializeField]
     GameObject light;
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     public bool getDay() { return day; }
     public GameObject getPoints() { return points; }
+    public GameObject getScenario() { return scenario; }
 
     private void Update()
     {
@@ -52,13 +55,13 @@ public class GameManager : MonoBehaviour
         // Si ha pasado medio dia es de noche
         if(actualTime >= dayDuration / 2)
         {
-
+            day = false;
         }
 
         // Si se ha acabado el dia reseteamos el timer
         if(actualTime >= dayDuration)
         {
-            Debug.Log(actualTime);
+            day = true;
             actualTime = 0.0f;
         }
 

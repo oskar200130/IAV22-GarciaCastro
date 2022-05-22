@@ -4825,7 +4825,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250906221}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4490552, y: 1.93, z: 9.679455}
@@ -10996,6 +10996,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690517328}
+  - {fileID: 1407952173}
   - {fileID: 1493975658}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -11013,6 +11014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   house: {fileID: 1690517327}
+  orchard: {fileID: 1407952169}
 --- !u!1 &628451344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f0bb317b46696844984491db746dba86, type: 3}
@@ -12441,7 +12443,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b1c46e2e2a9b34198c30a16aa8dc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dayDuration: 20
   points: {fileID: 628341209}
+  scenario: {fileID: 787197244}
+  light: {fileID: 2138677391}
 --- !u!4 &713823174
 Transform:
   m_ObjectHideFlags: 0
@@ -13734,6 +13739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 787197245}
+  - component: {fileID: 787197246}
   m_Layer: 0
   m_Name: Escenario
   m_TagString: Untagged
@@ -13763,6 +13769,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &787197246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787197244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df58217c40f8f014f9db795268df85f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orchard: {fileID: 1458967039}
+  fenceDoor: {fileID: 1367615246}
 --- !u!1001 &790327841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25573,6 +25593,101 @@ Transform:
   m_Father: {fileID: 148290762}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1407952169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407952173}
+  - component: {fileID: 1407952172}
+  - component: {fileID: 1407952171}
+  - component: {fileID: 1407952170}
+  m_Layer: 0
+  m_Name: Huerto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1407952170
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407952169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1407952171
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407952169}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1407952172
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407952169}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1407952173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407952169}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.73, y: 1.5873808, z: -11.43}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_Children: []
+  m_Father: {fileID: 628341210}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1410180849 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f0bb317b46696844984491db746dba86, type: 3}
@@ -26450,7 +26565,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458967039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -1999370065, guid: dcd2196c4e9166f499793f2007fcda35, type: 3}
   m_Name: 
@@ -26491,6 +26606,9 @@ MonoBehaviour:
   pisado: {fileID: 2082332973306374166, guid: d6f69674076505a459be6381912e70d0, type: 3}
   izPos: {fileID: 1949687273}
   derPos: {fileID: 1265902261}
+  estaPisado: 1
+  estaRegado: 0
+  estaSeco: 0
 --- !u!1 &1459761174
 GameObject:
   m_ObjectHideFlags: 0
@@ -27323,7 +27441,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 628341210}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1493975659
 SphereCollider:
@@ -30507,7 +30625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690517327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.27, y: 1.5873808, z: -0.93}
+  m_LocalPosition: {x: 3.91, y: 1.5873808, z: -1.18}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 628341210}
@@ -32995,7 +33113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828175222}
   m_LocalRotation: {x: -0, y: -0.6155209, z: -0, w: 0.78812057}
-  m_LocalPosition: {x: 6.96, y: 0, z: 49.77}
+  m_LocalPosition: {x: 6.93, y: 0, z: 49.78}
   m_LocalScale: {x: 0.12717992, y: 1.2341, z: 0.15343092}
   m_Children: []
   m_Father: {fileID: 169530427}
@@ -36497,6 +36615,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1458967040}
     m_Modifications:
+    - target: {fileID: 2498336257774459342, guid: 3966d9d0acabbf24d946ceb46bdddc20, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3666197597346849441, guid: 3966d9d0acabbf24d946ceb46bdddc20, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -38569,10 +38691,14 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(711.8811,609.666748)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-330.02356,204.9047)"},"ID":1,"Name":"Noche","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-188.1189,199.666748)"},"ID":2,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsDay","NodeData":{"Offset":"(0,110)"},"ID":3,"Name":"Is
-        Day","Instant":true}]},{"Type":"GoSleep","NodeData":{"Offset":"(-58.1188965,199.666748)"},"ID":4,"Name":"Go
-        Sleep","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(61.8811035,199.666748)"},"ID":5,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.8},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"EnterHouse","NodeData":{"Offset":"(191.8811,199.666748)"},"ID":6,"Name":"Enter
-        House","Instant":true}]}}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(711.8811,609.666748)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(1.88110352,129.666748)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-420,130)"},"ID":2,"Name":"Noche","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-168.1189,129.666748)"},"ID":3,"Name":"Inverter","Instant":true,"Children":[{"Type":"IsDay","NodeData":{"Offset":"(0,110)"},"ID":4,"Name":"Is
+        Day","Instant":true}]},{"Type":"GoTo","NodeData":{"Offset":"(-58.1188965,129.666748)"},"ID":5,"Name":"Go
+        To","Instant":true,"Int32place":0},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(61.8811035,129.666748)"},"ID":6,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.8},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"EnterHouse","NodeData":{"Offset":"(171.8811,129.666748)"},"ID":7,"Name":"Enter
+        House","Instant":true}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,130)"},"ID":8,"Name":"Huerto","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"ExitHouse","NodeData":{"Offset":"(-108.1189,129.666748)"},"ID":9,"Name":"Exit
+        House","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(0,130)"},"ID":10,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"GoTo","NodeData":{"Offset":"(110,130)"},"ID":11,"Name":"Go
+        To","Instant":true,"Int32place":1},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(220,130)"},"ID":12,"Name":"Interactuar","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(-180,120)"},"ID":13,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"OrchardRepair","NodeData":{"Offset":"(-58.1188965,119.666748)"},"ID":14,"Name":"Orchard
+        Repair","Instant":true},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(60,120)"},"ID":15,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"OrchardIrrigate","NodeData":{"Offset":"(181.8811,119.666748)"},"ID":16,"Name":"Orchard
+        Irrigate","Instant":true}]}]}]}}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
