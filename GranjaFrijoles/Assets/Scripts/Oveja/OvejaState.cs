@@ -10,6 +10,7 @@ public class OvejaState : MonoBehaviour
     public float startWander = 0;
     public GameObject dog;
     public GameObject lobo;
+    public OvejasController controller;
     public float maxVel;
     [Range(0, 180)]
     public double anguloVistaHorizontal;   // Distancia maxima de vision
@@ -100,16 +101,19 @@ public class OvejaState : MonoBehaviour
 
     public void escapeWolf()
     {
-        //pos, posLobo - pos
-
-        //Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        //Vector3 v = transform.position - lobo.transform.position;
-        //v.Normalize();
-        //if ((rb.velocity + v).magnitude < maxVel)
-        //    rb.AddForce(v);
         Vector3 pos = transform.position;
         Vector3 posLobo = lobo.transform.position;
         pos -= posLobo - pos;
         agente.SetDestination(pos);
+    }
+
+    public void Update()
+    {
+        pastar = controller.horaDePastar;
+    }
+
+    public void Start()
+    {
+        controller.pushToOvejas(transform);
     }
 }
