@@ -5,6 +5,7 @@ using UnityEngine;
 public class OvejasController : MonoBehaviour
 {
     public bool horaDePastar { get; set; } = false;
+    public bool doorOpen { get; set; } = false;
     public Transform puerta;
     private List<Transform> ovejas = new List<Transform>();
 
@@ -18,7 +19,7 @@ public class OvejasController : MonoBehaviour
 
     public void Update()
     {
-        if (horaDePastar == false)
+        if (!horaDePastar && !doorOpen)
         {
             if (timer < timeLeft)
             {
@@ -37,7 +38,8 @@ public class OvejasController : MonoBehaviour
                 }
                 timeLeft = 0;
             }
-            timeLeft += Time.deltaTime;
         }
+        if (timeLeft < timer)
+            timeLeft += Time.deltaTime;
     }
 }

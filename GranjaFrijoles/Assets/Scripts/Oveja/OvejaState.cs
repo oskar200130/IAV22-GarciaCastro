@@ -51,7 +51,7 @@ public class OvejaState : MonoBehaviour
 
     public bool doorOpen()
     {
-        return false;
+        return controller.doorOpen;
     }
 
     public void wander()
@@ -79,8 +79,8 @@ public class OvejaState : MonoBehaviour
             randomDirection += gameObject.transform.position;
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }
-        while (((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) == 0 && !enEstablo) &&
-            ((1 << NavMesh.GetAreaFromName("Pradera") & navHit.mask) == 0 && enEstablo));
+        while (((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) == 0 && enEstablo) ||
+            ((1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) == 0 && !enEstablo));
         return navHit.position;
     }
 
