@@ -14,7 +14,9 @@ public class Huerto_Behaviour : MonoBehaviour
     GameObject pisado;
 
     // Referencias a los huertos 
+    [SerializeField]
     GameObject huertoIz;
+    [SerializeField]
     GameObject huertoDer;
     // Y sus respectivas posiciones
     [SerializeField]
@@ -30,7 +32,7 @@ public class Huerto_Behaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -55,6 +57,8 @@ public class Huerto_Behaviour : MonoBehaviour
         // Creamos los nuevos 
         huertoDer = Instantiate(regado, derPos);
         huertoIz = Instantiate(regado, izPos);
+        estaPisado = estaSeco = false;
+        estaRegado = true;
     }
 
     // Se llama al pasar al estado seco
@@ -66,6 +70,8 @@ public class Huerto_Behaviour : MonoBehaviour
         // Creamos los nuevos 
         huertoDer = Instantiate(seco, derPos);
         huertoIz = Instantiate(seco, izPos);
+        estaPisado = estaRegado = false;
+        estaSeco = true;
     }
 
     // Se llama al pasar al estado pisado
@@ -77,6 +83,8 @@ public class Huerto_Behaviour : MonoBehaviour
         // Creamos los nuevos 
         huertoDer = Instantiate(pisado, derPos);
         huertoIz = Instantiate(pisado, izPos);
+        estaSeco = estaRegado = false;
+        estaPisado = true;
     }
 
     public bool estaPisadoComprueba()
