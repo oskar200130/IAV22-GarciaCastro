@@ -11,7 +11,7 @@ public class OvejasController : MonoBehaviour
     private List<Transform> ovejas = new List<Transform>();
 
     public float timer = 10;
-    float timeLeft = 0;
+    private float timeLeft = 0;
 
     public void pushToOvejas(Transform t)
     {
