@@ -11062,7 +11062,7 @@ MonoBehaviour:
   house: {fileID: 1690517327}
   orchard: {fileID: 1407952169}
   fenceDoor: {fileID: 1493975657}
-  meetZone: {fileID: 0}
+  meetZone: {fileID: 1827434528}
   campSide: {fileID: 0}
   insideEstablo: {fileID: 0}
   patrol1: {fileID: 0}
