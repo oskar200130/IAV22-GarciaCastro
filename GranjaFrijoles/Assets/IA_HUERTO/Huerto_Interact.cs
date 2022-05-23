@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Huerto_Interact : MonoBehaviour
 {
-    bool sePuedePisar = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,6 @@ public class Huerto_Interact : MonoBehaviour
         if(other.GetComponent<PolloController>())
         {
             Debug.Log("Pollodentro");
-            sePuedePisar = true;
             other.GetComponent<PolloInteract>().sePuedePisar = true;
         }
     }

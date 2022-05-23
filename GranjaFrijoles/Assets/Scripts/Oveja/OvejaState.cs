@@ -84,12 +84,11 @@ public class OvejaState : MonoBehaviour
 
     public void runaway()
     {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
-        randomDirection += gameObject.transform.position;
+        Vector3 randomDirection;
         NavMeshHit navHit;
         do
         {
-            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
+            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander * 5;
             randomDirection += gameObject.transform.position;
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }
