@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 955944894110579472}
   - component: {fileID: 6395110301247722150}
   - component: {fileID: 8238347728026640548}
+  - component: {fileID: 5206398844369310299}
   m_Layer: 0
   m_Name: Perro
   m_TagString: Untagged
@@ -128,3 +129,19 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: 52b8c37a3fef92049a88a5d55d5c4356, type: 2}
+--- !u!114 &5206398844369310299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649992296502110425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebaba3aad9bdb84688bd855490c87a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chicken: {fileID: 0}
+  lobo: {fileID: 0}
+  sheepController: {fileID: 0}
+  timer: 0

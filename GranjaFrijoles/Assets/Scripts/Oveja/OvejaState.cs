@@ -114,4 +114,9 @@ public class OvejaState : MonoBehaviour
     {
         controller.pushToOvejas(transform);
     }
+
+    public bool escaped()
+    {
+        return !enEstablo && !pastar;
+    }
 }

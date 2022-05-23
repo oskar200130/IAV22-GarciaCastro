@@ -43,4 +43,16 @@ public class OvejasController : MonoBehaviour
         if (timeLeft < timer)
             timeLeft += Time.deltaTime;
     }
+
+    public Transform scapedSheep()
+    {
+        for (int i = 0; i < ovejas.Count; i++)
+        {
+            if (ovejas[i].GetComponent<OvejaState>().escaped())
+            {
+                return ovejas[i];
+            }
+        }
+        return null;
+    }
 }
