@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class Perro : MonoBehaviour
 {
     public bool takeOut { get; set; } = false;
-    public bool takeIn { get; set; } = false;
     public bool sheepIsLost { get; set; } = false;
     public Transform chicken;
     public Transform lobo;
@@ -17,7 +16,7 @@ public class Perro : MonoBehaviour
     public int distanceWander;
     public float timeWandering;
     public float startWander = 0;
-    public float countWanders = 0;
+    private int countWanders = 0;
     [SerializeField]
     public float timer;
     private float timeLeftToSleep = 0;
@@ -26,10 +25,13 @@ public class Perro : MonoBehaviour
     private Vector3 pos = new Vector3();
 
     public Transform[] patrolPlaces { get; set; } = new Transform[4]; 
+    private Transform[] routePlaces { get; set; } = new Transform[4]; 
     public Transform dogHouse { get; set; }
     public Transform camp { get; set; }
     public Transform insideEstabo { get; set; }
     public Transform door { get; set; }
+
+    private int routeStep = 0;
 
     public double anguloVistaHorizontal;   // Distancia maxima de vision
     public double distanciaVista;
@@ -61,24 +63,52 @@ public class Perro : MonoBehaviour
 
     public void Patrol()
     {
-        if (countWanders < 5 && !arrived)
+        if (countWanders < 5 && arrived)
         {
             wander();
-            countWanders++;
         }
-        else if (!arrived)
+        else if (arrived)
         {
             int r = Random.Range(0, 4);
             agente.SetDestination(patrolPlaces[r].position);
             pos = patrolPlaces[r].position;
             arrived = false;
         }
-        else if (transform.position == pos)
+        else if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
         {
             arrived = true;
+            countWanders = 0;
         }
     }
 
+    public bool Ruta()
+    {
+        if (routeStep == 0)
+        {
+            agente.SetDestination(door.position);
+            routeStep++;
+        }
+        else if (routeStep <= 4)
+        {
+            if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
+            {
+                sheepController.followDog();
+                agente.SetDestination(routePlaces[0].position);
+                routeStep++;
+            }
+        }
+        else if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
+        {
+            agente.SetDestination(insideEstabo.position);
+            if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
+            {
+                routeStep = 0;
+                sheepController.unfollowDog();
+                sheepController.horaDePastar = false;
+            }
+        }
+        return false;
+    }
 
     public bool seeWolf()
     {
@@ -119,6 +149,7 @@ public class Perro : MonoBehaviour
             {
                 startWander = timeWandering;
                 agente.SetDestination(getRandPoint());
+                countWanders++;
             }
         }
 
@@ -133,7 +164,10 @@ public class Perro : MonoBehaviour
             randomDirection += gameObject.transform.position;
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }
-        while ((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) == 0);
+        while ((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) == 0 &&
+        (1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) == 0 &&
+        (1 << NavMesh.GetAreaFromName("Perro") & navHit.mask) == 0 &&
+        (1 << NavMesh.GetAreaFromName("Granja") & navHit.mask) == 0);
         return navHit.position;
     }
 
@@ -154,6 +188,10 @@ public class Perro : MonoBehaviour
         patrolPlaces[1] = p.patrol2.transform;
         patrolPlaces[2] = p.patrol3.transform;
         patrolPlaces[3] = p.patrol4.transform;
+        routePlaces[0] = p.route1.transform;
+        routePlaces[1] = p.route2.transform;
+        routePlaces[2] = p.route3.transform;
+        routePlaces[3] = p.route4.transform;
 
     }
 }

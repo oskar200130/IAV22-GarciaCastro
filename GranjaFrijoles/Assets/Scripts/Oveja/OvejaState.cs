@@ -84,18 +84,19 @@ public class OvejaState : MonoBehaviour
 
     public void runaway()
     {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander * 10;
         randomDirection += gameObject.transform.position;
         NavMeshHit navHit;
         do
         {
-            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
+            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander * 10;
             randomDirection += gameObject.transform.position;
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }
-        while ((1 << NavMesh.GetAreaFromName("Pradera") & navHit.mask) == 0 );
+        while ((1 << NavMesh.GetAreaFromName("Pradera") & navHit.mask) == 0);
         agente.SetDestination(navHit.position);
         sheepIsLost();
+        enEstablo = false;
     }
 
     public void sheepIsLost()

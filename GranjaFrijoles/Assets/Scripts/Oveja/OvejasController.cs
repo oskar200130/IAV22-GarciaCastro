@@ -20,7 +20,7 @@ public class OvejasController : MonoBehaviour
 
     public void Update()
     {
-        if (!horaDePastar && !doorOpen)
+        if (!horaDePastar && doorOpen)
         {
             if (timer < timeLeft)
             {
@@ -40,6 +40,7 @@ public class OvejasController : MonoBehaviour
                 timeLeft = 0;
             }
         }
+        else timeLeft = 0;
         if (timeLeft < timer)
             timeLeft += Time.deltaTime;
     }
@@ -63,6 +64,7 @@ public class OvejasController : MonoBehaviour
             if (!ovejas[i].GetComponent<OvejaState>().escaped())
             {
                 ovejas[i].GetComponent<OvejaState>().followingDog = true;
+                ovejas[i].GetComponent<OvejaState>().enEstablo = false;
             }
         }
     }
@@ -72,6 +74,7 @@ public class OvejasController : MonoBehaviour
         for (int i = 0; i < ovejas.Count; i++)
         {
             ovejas[i].GetComponent<OvejaState>().followingDog = false;
+            ovejas[i].GetComponent<OvejaState>().enEstablo = true;
         }
     }
 }
