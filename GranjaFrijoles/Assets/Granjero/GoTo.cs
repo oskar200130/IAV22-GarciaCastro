@@ -22,6 +22,7 @@ public class GoTo : Action
                 dest = GameManager.instance.getPoints().GetComponent<Places>().orchard;
                 break;
             case 2:
+                dest = GameManager.instance.getPoints().GetComponent<Places>().fenceDoor;
                 break;
         }
     }

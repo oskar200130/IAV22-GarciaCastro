@@ -6,6 +6,7 @@ public class OvejasController : MonoBehaviour
 {
     public bool horaDePastar { get; set; } = false;
     public bool doorOpen { get; set; } = false;
+    public bool eatToday { get; set; } = false;
     public Transform puerta;
     private List<Transform> ovejas = new List<Transform>();
 

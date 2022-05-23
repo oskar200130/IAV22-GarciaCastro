@@ -7,5 +7,5 @@ public class Places : MonoBehaviour
     //Localizaciones a las que los agentes pueden dirigirse
     public GameObject house;
     public GameObject orchard;
-
+    public GameObject fenceDoor;
 }

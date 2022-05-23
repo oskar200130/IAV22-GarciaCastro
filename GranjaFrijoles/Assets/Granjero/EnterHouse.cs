@@ -4,13 +4,9 @@ using BehaviorDesigner.Runtime.Tasks;
 
 public class EnterHouse : Action
 {
-	public override void OnStart()
-	{
-		
-	}
-
 	public override TaskStatus OnUpdate()
 	{
+		GameManager.instance.getSheepsCtrl().GetComponent<OvejasController>().eatToday = false;
 		transform.GetChild(1).transform.gameObject.SetActive(false);
 		return TaskStatus.Success;
 	}

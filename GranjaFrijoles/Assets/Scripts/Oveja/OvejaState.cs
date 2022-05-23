@@ -69,13 +69,11 @@ public class OvejaState : MonoBehaviour
     }
 
     private Vector3 getRandPoint()
-    {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
-        randomDirection += gameObject.transform.position;
+    {      
         NavMeshHit navHit;
         do
         {
-            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
+            Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
             randomDirection += gameObject.transform.position;
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }

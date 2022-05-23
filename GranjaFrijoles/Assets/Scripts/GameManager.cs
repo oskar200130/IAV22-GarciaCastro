@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     static public GameManager instance;
     
-    private bool day = false;
+    private bool day = true;
 
     [SerializeField]
     float dayDuration;
@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     GameObject points;
     [SerializeField]
     GameObject scenario;
+    [SerializeField]
+    GameObject sheepsContr;
 
     [SerializeField]
     GameObject light;
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
     public bool getDay() { return day; }
     public GameObject getPoints() { return points; }
     public GameObject getScenario() { return scenario; }
+    public GameObject getSheepsCtrl() { return sheepsContr; }
 
     private void Update()
     {
