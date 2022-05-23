@@ -14,7 +14,7 @@ public class OrchardIrrigate : Action
 	{
 		Huerto_Behaviour hb = orch.GetComponent<Huerto_Behaviour>();
 		if (hb.estaSeco)
-			hb.setRegado();
+			hb.estaRegado = true;
 		return TaskStatus.Success;
 	}
 }
