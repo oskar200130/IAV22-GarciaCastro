@@ -18,6 +18,9 @@ public class PolloInteract : MonoBehaviour
     // Para guardarnos la comida
     Transform paja;
 
+    // Para guardarnos el audio que hemos activado
+    GameObject audioTrigger;
+
 
     void Start()
     {
@@ -54,6 +57,10 @@ public class PolloInteract : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             GetComponent<AudioSource>().Play();
+            if (sePuedeHacerRuido)
+            {
+                GameManager.instance.activaAudioTrigger(audioTrigger);
+            }
         }
     }
 
@@ -71,5 +78,9 @@ public class PolloInteract : MonoBehaviour
     public void setComida(Transform com)
     {
         paja = com;
+    }
+    public void setAudioTrigger(GameObject au)
+    {
+        audioTrigger = au;
     }
 }

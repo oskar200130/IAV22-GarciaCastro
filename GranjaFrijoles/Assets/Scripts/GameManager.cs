@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     static public GameManager instance;
     
-    private bool day = false;
+    private bool day = true;
 
     [SerializeField]
     float dayDuration;
@@ -23,6 +23,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject light;
+
+    [SerializeField]
+    GameObject[] audioTriggersGranjero;
+    int audiosActivosGranjero = 0; // para indicar cuantos ha activado la gallina
+    [SerializeField]
+    GameObject[] audioTriggersPerro;
+    int audiosActivosPerro = 0; // para indicar cuantos ha activado la gallina
+    [SerializeField]
+    Material MatAudio1;
+    [SerializeField]
+    Material MatAudio2;
 
     // Colores para las luces
     Color amaneceAtardece = new Color(1f, 0.4f, 0.3f, 1f);
@@ -46,6 +57,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         ActualizaDia();
+        ManejaAudios();
     }
 
     void ActualizaDia()
@@ -89,5 +101,53 @@ public class GameManager : MonoBehaviour
             lightTime += Time.deltaTime / lightTimeDuration;
         else 
             lightTime = 0.0f;
+    }
+
+    void ManejaAudios()
+    {
+        if(day)
+        {
+            audiosActivosGranjero = 0;
+            audiosActivosPerro = 0;
+            for (int i = 0; i < audioTriggersGranjero.Length; i++)
+            {
+                audioTriggersGranjero[i].GetComponent<MeshRenderer>().material = MatAudio1;
+                audioTriggersGranjero[i].SetActive(false);
+            }
+            for (int i = 0; i < audioTriggersPerro.Length; i++)
+            {
+                audioTriggersPerro[i].GetComponent<MeshRenderer>().material = MatAudio1;
+                audioTriggersPerro[i].SetActive(false);
+            }
+        }
+        else 
+        {
+            for (int i = 0; i < audioTriggersGranjero.Length; i++)
+                audioTriggersGranjero[i].SetActive(true);
+            for (int i = 0; i < audioTriggersPerro.Length; i++)
+                audioTriggersPerro[i].SetActive(true);
+        }
+    }
+
+    public void activaAudioTrigger(GameObject a)
+    {
+        if (a.tag == "AudioGranjero")
+            audiosActivosGranjero++;
+        else
+            audiosActivosPerro++;
+
+        Debug.Log("Granjero: " + audiosActivosGranjero + " Perro: " + audiosActivosPerro);
+
+        a.GetComponent<MeshRenderer>().material = MatAudio2; 
+    }
+
+    // Esto lo suyo es que se use en la maquina de estados del perro o granjero
+    public int getAudiosActivosGranjero()
+    {
+        return audiosActivosGranjero;
+    }
+    public int getAudiosActivosPerro()
+    {
+        return audiosActivosPerro;
     }
 }
