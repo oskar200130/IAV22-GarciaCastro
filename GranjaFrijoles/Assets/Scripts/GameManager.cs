@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     static public GameManager instance;
     
     private bool day = true;
+    private bool meet = true;
 
     [SerializeField]
     float dayDuration;
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     public bool getDay() { return day; }
+    public bool getMeet() { return meet; }
     public GameObject getPoints() { return points; }
     public GameObject getScenario() { return scenario; }
     public GameObject getSheepsCtrl() { return sheepsContr; }
@@ -71,10 +73,14 @@ public class GameManager : MonoBehaviour
         if(actualTime >= dayDuration / 2)
         {
             day = false;
+            meet = false;
         }
-
+        if (actualTime >= dayDuration / 4)
+        {
+            meet = true;
+        }
         // Si se ha acabado el dia reseteamos el timer
-        if(actualTime >= dayDuration)
+        if (actualTime >= dayDuration)
         {
             day = true;
             actualTime = 0.0f;

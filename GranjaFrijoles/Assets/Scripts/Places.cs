@@ -8,4 +8,5 @@ public class Places : MonoBehaviour
     public GameObject house;
     public GameObject orchard;
     public GameObject fenceDoor;
+    public GameObject meetZone;
 }
