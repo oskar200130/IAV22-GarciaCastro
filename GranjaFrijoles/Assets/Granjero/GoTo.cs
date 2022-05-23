@@ -7,11 +7,13 @@ public class GoTo : Action
 {
     public int place = -1;
     NavMeshAgent agent;
+    Animator anim;
     GameObject dest;
     
     public override void OnStart()
 	{
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         dest = this.gameObject;
         switch (place)
         {
@@ -33,10 +35,14 @@ public class GoTo : Action
             agent.SetDestination(dest.transform.position);
         if (Vector3.SqrMagnitude(transform.position - dest.transform.position) < 1.0f)
         {
-            agent.SetDestination(transform.position);            
+            agent.SetDestination(transform.position);
+            anim.SetBool("walking", false);
             return TaskStatus.Success;
         }
         else
+        {
+            anim.SetBool("walking", true);
             return TaskStatus.Running;
+        }
     }
 }

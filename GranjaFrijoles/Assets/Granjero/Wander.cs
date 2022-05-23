@@ -8,12 +8,10 @@ public class Wander : Action
     private NavMeshAgent agente;
     [SerializeField]
     float distanceWander;
-    [SerializeField]
-    float timeWandering;
-    float startWander = 0;
     public override void OnStart()
     {
         agente = GetComponent<NavMeshAgent>();
+        GetComponent<Animator>().SetBool("walking", true);
     }
 
     public override TaskStatus OnUpdate()
@@ -26,10 +24,8 @@ public class Wander : Action
     {
         if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
         {
-            startWander -= Time.deltaTime;
-            if (startWander <= 0)
+            if (Vector3.SqrMagnitude(transform.position - agente.destination) < 1.0f)
             {
-                startWander = timeWandering;
                 agente.SetDestination(getRandPoint());
             }
         }
