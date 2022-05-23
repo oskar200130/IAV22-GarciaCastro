@@ -95,6 +95,12 @@ public class OvejaState : MonoBehaviour
         }
         while ((1 << NavMesh.GetAreaFromName("Pradera") & navHit.mask) == 0 );
         agente.SetDestination(navHit.position);
+        sheepIsLost();
+    }
+
+    public void sheepIsLost()
+    {
+        dog.GetComponent<Perro>().sheepIsLost = true;
     }
 
     public void escapeWolf()

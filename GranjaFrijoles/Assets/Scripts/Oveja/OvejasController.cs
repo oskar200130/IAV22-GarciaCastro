@@ -11,7 +11,7 @@ public class OvejasController : MonoBehaviour
     private List<Transform> ovejas = new List<Transform>();
 
     public float timer = 10;
-    float timeLeft = 0;
+    private float timeLeft = 0;
 
     public void pushToOvejas(Transform t)
     {
@@ -54,5 +54,24 @@ public class OvejasController : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public void followDog()
+    {
+        for (int i = 0; i < ovejas.Count; i++)
+        {
+            if (!ovejas[i].GetComponent<OvejaState>().escaped())
+            {
+                ovejas[i].GetComponent<OvejaState>().followingDog = true;
+            }
+        }
+    }
+
+    public void unfollowDog()
+    {
+        for (int i = 0; i < ovejas.Count; i++)
+        {
+            ovejas[i].GetComponent<OvejaState>().followingDog = false;
+        }
     }
 }
