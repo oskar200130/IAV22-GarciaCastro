@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6395110301247722150}
   - component: {fileID: 8238347728026640548}
   - component: {fileID: 5206398844369310299}
+  - component: {fileID: 6952461757944965344}
   m_Layer: 0
   m_Name: Perro
   m_TagString: Untagged
@@ -145,3 +146,22 @@ MonoBehaviour:
   lobo: {fileID: 0}
   sheepController: {fileID: 0}
   timer: 0
+--- !u!95 &6952461757944965344
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5649992296502110425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 645e03fefbc289c4688f7eff9ba79baf, type: 3}
+  m_Controller: {fileID: 9100000, guid: 0bf4170f94439e64da595be7fe73a311, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

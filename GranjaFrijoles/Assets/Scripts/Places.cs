@@ -8,4 +8,12 @@ public class Places : MonoBehaviour
     public GameObject house;
     public GameObject orchard;
     public GameObject fenceDoor;
+    public GameObject campSide;
+    public GameObject insideEstablo;
+    public GameObject patrol1;
+    public GameObject patrol2;
+    public GameObject patrol3;
+    public GameObject patrol4;
+    public GameObject dogHouse;
+    public GameObject door;
 }
