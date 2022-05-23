@@ -62,6 +62,7 @@ public class Lobo : MonoBehaviour
     {
         ovejaObjetivo.GetComponent<OvejaState>().muerta = true;
         ovejaObjetivo.SetActive(false);
+        ovejaObjetivo.transform.SetParent(null);
         Ovejas.Remove(ovejaObjetivo);
         ovejaObjetivo = null;
     }
