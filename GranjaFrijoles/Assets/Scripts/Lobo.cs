@@ -6,16 +6,18 @@ using UnityEngine.AI;
 public class Lobo : MonoBehaviour
 {
     public GameObject Cueva;
+    public List<GameObject> Ovejas;
+    GameObject ovejaObjetivo;
+    NavMeshAgent agente;
+
+    private void Start()
+    {
+        agente = GetComponent<NavMeshAgent>();
+    }
 
     public bool EsDeDia()
     {
-        // Falta el ciclo de día y noche para hacer bien esta comprobación
-        return false;
-    }
-
-    public void VuelveCueva()
-    {
-
+        return GameManager.instance.getDay();
     }
 
     public bool EnCueva()
@@ -33,7 +35,34 @@ public class Lobo : MonoBehaviour
 
     public bool TieneOveja()
     {
-        // Devuelve true si tiene una oveja capturada
-        return false;
+        return transform.childCount > 2;
+    }
+
+    public void SetOveja()
+    {
+        int i = Random.Range(0, Ovejas.Count);
+        ovejaObjetivo = Ovejas[i];
+    }
+
+    public Vector3 GetOvejaPos()
+    {
+        return ovejaObjetivo.transform.position;
+    }
+
+    public void CogeOveja()
+    {
+        if(Vector3.Distance(transform.position, GetOvejaPos()) < 1)
+        {
+            ovejaObjetivo.transform.parent = transform;
+            ovejaObjetivo.GetComponent<OvejaState>().atrapada = true;
+        }
+    }
+
+    public void MataOveja()
+    {
+        ovejaObjetivo.GetComponent<OvejaState>().muerta = true;
+        ovejaObjetivo.SetActive(false);
+        Ovejas.Remove(ovejaObjetivo);
+        ovejaObjetivo = null;
     }
 }
