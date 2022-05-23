@@ -108,7 +108,11 @@ public class OvejaState : MonoBehaviour
         Vector3 pos = transform.position;
         Vector3 posLobo = lobo.transform.position;
         pos -= posLobo - pos;
-        agente.SetDestination(pos);
+        NavMeshHit navHit;
+        NavMesh.SamplePosition(pos, out navHit, distanceWander, NavMesh.AllAreas);
+        if ((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) != 0 && enEstablo ||
+            (1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) != 0 && !enEstablo)
+            agente.SetDestination(pos);
     }
 
     public void Update()

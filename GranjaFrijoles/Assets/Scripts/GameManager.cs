@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     Color medioDia = new Color(1f, 0.96f, 0.84f, 1f);
     Color noche = new Color(0f, 0f, 0.96f, 1f);
 
-    public void Start()
+    public void Awake()
     {
         instance = this;
 
