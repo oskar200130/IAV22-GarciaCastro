@@ -6,7 +6,9 @@ using UnityEngine.AI;
 public class Wander : Action
 {
     private NavMeshAgent agente;
+    [SerializeField]
     float distanceWander;
+    [SerializeField]
     float timeWandering;
     float startWander = 0;
     public override void OnStart()
