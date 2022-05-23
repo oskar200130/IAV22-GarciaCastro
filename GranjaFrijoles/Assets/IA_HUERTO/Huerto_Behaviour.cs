@@ -29,6 +29,9 @@ public class Huerto_Behaviour : MonoBehaviour
     public bool estaRegado = false;
     public bool estaSeco = false;
 
+    // Se guarda el ultimo estado (regado o seco)
+    string ultimoEstado = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,5 +94,25 @@ public class Huerto_Behaviour : MonoBehaviour
     {
         return estaPisado;
     }
- 
+    public bool estaRegadoComprueba()
+    {
+        return estaRegado;
+    }
+    public bool estaSecoComprueba()
+    {
+        return estaSeco;
+    }
+    public void guardaEstado(string estado)
+    {
+        ultimoEstado = estado;
+    }
+    public bool estaReparadoSeco()
+    {
+        return !estaPisado && ultimoEstado == "seco";
+    }
+    public bool estaReparadoRegado()
+    {
+        return !estaPisado && ultimoEstado == "regado";
+    }
+
 }

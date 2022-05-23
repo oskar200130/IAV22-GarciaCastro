@@ -598,9 +598,10 @@ GameObject:
   - component: {fileID: 24184985}
   - component: {fileID: 24184984}
   - component: {fileID: 24184983}
+  - component: {fileID: 24184987}
   m_Layer: 0
   m_Name: AudioTrigger
-  m_TagString: Untagged
+  m_TagString: AudioGranjero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -675,14 +676,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24184982}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.95, y: 0, z: 14.32}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.79, y: 0, z: 0.84000015}
   m_LocalScale: {x: 2.5638587, y: 0.18655436, z: 2.5638587}
   m_Children:
   - {fileID: 518745300}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1956378809}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &24184987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24184982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59f9050e21458144a7ab26dd4b5e61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &27937456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9983,7 +9996,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -14623,9 +14636,10 @@ GameObject:
   - component: {fileID: 800724770}
   - component: {fileID: 800724769}
   - component: {fileID: 800724768}
+  - component: {fileID: 800724772}
   m_Layer: 0
   m_Name: AudioTrigger (2)
-  m_TagString: Untagged
+  m_TagString: AudioGranjero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14700,14 +14714,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800724767}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26, y: 0, z: 5.89}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.1, y: 0, z: -7.5899997}
   m_LocalScale: {x: 2.5638587, y: 0.18655436, z: 2.5638587}
   m_Children:
   - {fileID: 690767660}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1956378809}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &800724772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800724767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59f9050e21458144a7ab26dd4b5e61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &807514415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21561,9 +21587,10 @@ GameObject:
   - component: {fileID: 1187727342}
   - component: {fileID: 1187727341}
   - component: {fileID: 1187727340}
+  - component: {fileID: 1187727344}
   m_Layer: 0
   m_Name: AudioTrigger (3)
-  m_TagString: Untagged
+  m_TagString: AudioPerro
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21638,14 +21665,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187727339}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.84, y: 0, z: 13.48}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5638587, y: 0.18655436, z: 2.5638587}
   m_Children:
   - {fileID: 116275967}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1956378809}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1187727344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187727339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59f9050e21458144a7ab26dd4b5e61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1188675251
 GameObject:
   m_ObjectHideFlags: 0
@@ -26781,12 +26820,16 @@ MonoBehaviour:
   dayDuration: 60
   points: {fileID: 0}
   scenario: {fileID: 0}
+  sheepsContr: {fileID: 0}
   light: {fileID: 2138677391}
-  audioTriggers:
+  audioTriggersGranjero:
   - {fileID: 24184982}
   - {fileID: 1920158268}
   - {fileID: 800724767}
+  audioTriggersPerro:
   - {fileID: 1187727339}
+  MatAudio1: {fileID: 2100000, guid: 626be5c636e22084690c2da5974b40a8, type: 2}
+  MatAudio2: {fileID: 2100000, guid: b232d80a2df23ea4d9d0f5dd49cc3812, type: 2}
 --- !u!4 &1430765204
 Transform:
   m_ObjectHideFlags: 0
@@ -35093,9 +35136,10 @@ GameObject:
   - component: {fileID: 1920158271}
   - component: {fileID: 1920158270}
   - component: {fileID: 1920158269}
+  - component: {fileID: 1920158273}
   m_Layer: 0
   m_Name: AudioTrigger (1)
-  m_TagString: Untagged
+  m_TagString: AudioGranjero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35170,14 +35214,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920158268}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.75, y: 0, z: 9.19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.09, y: 0, z: -4.29}
   m_LocalScale: {x: 2.5638587, y: 0.18655436, z: 2.5638587}
   m_Children:
   - {fileID: 1929048711}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1956378809}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1920158273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920158268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59f9050e21458144a7ab26dd4b5e61f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1921327569
 GameObject:
   m_ObjectHideFlags: 0
@@ -36061,6 +36117,40 @@ Transform:
   m_Father: {fileID: 1766865342}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 320.528, z: 0}
+--- !u!1 &1956378808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956378809}
+  m_Layer: 0
+  m_Name: AudioTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1956378809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956378808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.84, y: 0, z: 13.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 24184986}
+  - {fileID: 1920158272}
+  - {fileID: 800724771}
+  - {fileID: 1187727343}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1960246013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2d12f4ffdb38df5438d71e6214b8756b, type: 3}
