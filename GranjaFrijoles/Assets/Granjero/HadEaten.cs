@@ -6,6 +6,6 @@ public class HadEaten : Conditional
 {
 	public override TaskStatus OnUpdate()
 	{
-		return (bool)GetComponent<BehaviorTree>().GetVariable("Eaten").GetValue() ? TaskStatus.Success : TaskStatus.Failure;
+		return (bool)GetComponent<BehaviorTree>().GetVariable("Comido").GetValue() ? TaskStatus.Success : TaskStatus.Failure;
 	}
 }

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     static public GameManager instance;
     
     private bool day = true;
-    private bool meet = true;
+    private bool meet = false;
 
     [SerializeField]
     float dayDuration;

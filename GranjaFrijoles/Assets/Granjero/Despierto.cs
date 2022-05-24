@@ -2,16 +2,10 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class Eat : Action
+public class Despierto : Conditional
 {
-	public override void OnStart()
-	{
-		
-	}
-
 	public override TaskStatus OnUpdate()
 	{
-		GetComponent<BehaviorTree>().GetVariable("Eaten").SetValue(true);
 		return TaskStatus.Success;
 	}
 }

@@ -12,26 +12,21 @@ public class Wander : Action
     {
         agente = GetComponent<NavMeshAgent>();
         GetComponent<Animator>().SetBool("walking", true);
+        agente.SetDestination(getRandPoint());
     }
 
     public override TaskStatus OnUpdate()
-	{
-        wander();
-		return TaskStatus.Running;
-	}
-
-    public void wander()
     {
         if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
         {
             if (Vector3.SqrMagnitude(transform.position - agente.destination) < 1.0f)
             {
-                agente.SetDestination(getRandPoint());
+                GetComponent<Animator>().SetBool("walking", false);
+                return TaskStatus.Success;
             }
         }
-
+        return TaskStatus.Running;
     }
-
     private Vector3 getRandPoint()
     {
         NavMeshHit navHit;

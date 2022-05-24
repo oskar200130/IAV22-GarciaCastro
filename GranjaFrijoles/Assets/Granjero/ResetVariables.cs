@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class Eat : Action
+public class ResetVariables : Action
 {
 	public override void OnStart()
 	{
@@ -11,7 +11,8 @@ public class Eat : Action
 
 	public override TaskStatus OnUpdate()
 	{
-		GetComponent<BehaviorTree>().GetVariable("Eaten").SetValue(true);
+		GetComponent<BehaviorTree>().GetVariable("Comido").SetValue(false);
+		GetComponent<BehaviorTree>().GetVariable("Regado").SetValue(false);
 		return TaskStatus.Success;
 	}
 }

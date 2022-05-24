@@ -12,6 +12,7 @@ public class OrchardIrrigate : Action
 
 	public override TaskStatus OnUpdate()
 	{
+		GetComponent<BehaviorTree>().GetVariable("Regado").SetValue(true);
 		Huerto_Behaviour hb = orch.GetComponent<Huerto_Behaviour>();
 		if (hb.estaSeco)
 			hb.estaRegado = true;
