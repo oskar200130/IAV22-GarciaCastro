@@ -35,11 +35,13 @@ public class SeguirLobo : Action
         else if ((1 << NavMesh.GetAreaFromName("CampoEscape") & navHit.mask) != 0)
         {
             agent.SetDestination(transform.position);
+            dest.GetComponent<Lobo>().visto = false;
             anim.SetBool("walking", false);
             return TaskStatus.Failure;
         }
         else
         {
+            dest.GetComponent<Lobo>().visto = true;
             anim.SetBool("walking", true);
             return TaskStatus.Running;
         }
