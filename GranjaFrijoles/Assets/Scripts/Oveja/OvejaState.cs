@@ -24,6 +24,7 @@ public class OvejaState : MonoBehaviour
     public bool followingDog { get; set; }
 
     private NavMeshAgent agente;
+    private Transform[] randPoints = new Transform[8];
 
     public void Awake()
     {
@@ -84,16 +85,8 @@ public class OvejaState : MonoBehaviour
 
     public void runaway()
     {
-        Vector3 randomDirection;
-        NavMeshHit navHit;
-        do
-        {
-            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander * 10;
-            randomDirection += gameObject.transform.position;
-            NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
-        }
-        while ((1 << NavMesh.GetAreaFromName("Pradera") & navHit.mask) == 0);
-        agente.SetDestination(navHit.position);
+        int rand = Random.Range(0, randPoints.Length);
+        agente.SetDestination(randPoints[rand].position);
         sheepIsLost();
         enEstablo = false;
     }
@@ -123,6 +116,15 @@ public class OvejaState : MonoBehaviour
     public void Start()
     {
         controller.pushToOvejas(transform);
+        Places p = GameManager.instance.getPoints().GetComponent<Places>();
+        randPoints[0] = p.campSide.transform;
+        randPoints[1] = p.patrol1.transform;
+        randPoints[2] = p.patrol2.transform;
+        randPoints[3] = p.patrol3.transform;
+        randPoints[4] = p.route1.transform;
+        randPoints[5] = p.route2.transform;
+        randPoints[6] = p.route3.transform;
+        randPoints[7] = p.route4.transform;
     }
 
     public bool escaped()

@@ -201,7 +201,7 @@ Animator:
   m_GameObject: {fileID: 2405245488031783706}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 20e2b332a554c314d8c9c962188d7c31, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72bb2ca9b5c303c4d9f68e841e44edf7, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cueva: {fileID: 0}
+  Ovejas: []
 --- !u!114 &-7064380488608961080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,14 +486,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5478041445817523060}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.50000083, y: 0.49999923, z: 0.49999937, w: 0.50000066}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 8574380054652416594}
   m_Father: {fileID: 3038512115146981792}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!1 &5550088550007069068
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,13 +795,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8642682050478609742}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
   m_LocalPosition: {x: -0, y: 1.071492, z: 0.002876997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3038512115146981792}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!137 &4295655879933721947
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
