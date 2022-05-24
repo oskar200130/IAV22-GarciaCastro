@@ -138,7 +138,7 @@ public class OvejaState : MonoBehaviour
     {
         controller.pushToOvejas(transform);
         Places p = GameManager.instance.getPoints().GetComponent<Places>();
-        randPoints[0] = p.campSide.transform;
+        randPoints[0] = p.campo.transform;
         randPoints[1] = p.patrol1.transform;
         randPoints[2] = p.patrol2.transform;
         randPoints[3] = p.patrol3.transform;

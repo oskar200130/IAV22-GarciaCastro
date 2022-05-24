@@ -18,16 +18,16 @@ public class GoTo : Action
         switch (place)
         {
             case 0:
-                dest = GameManager.instance.getPoints().GetComponent<Places>().house;
+                dest = GameManager.instance.getPoints().GetComponent<Places>().casa;
                 break;
             case 1:
-                dest = GameManager.instance.getPoints().GetComponent<Places>().orchard;
+                dest = GameManager.instance.getPoints().GetComponent<Places>().huerto;
                 break;
             case 2:
-                dest = GameManager.instance.getPoints().GetComponent<Places>().fenceDoor;
+                dest = GameManager.instance.getPoints().GetComponent<Places>().puertaValla;
                 break;
             case 3:
-                dest = GameManager.instance.getPoints().GetComponent<Places>().meetZone;
+                dest = GameManager.instance.getPoints().GetComponent<Places>().mesaComer;
                 break;
         }
     }
