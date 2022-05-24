@@ -11,6 +11,7 @@ public class ResetVariables : Action
 
 	public override TaskStatus OnUpdate()
 	{
+		GameManager.instance.resetPajas();
 		GameManager.instance.getSheepsCtrl().GetComponent<OvejasController>().eatToday = false;
 		GetComponent<BehaviorTree>().GetVariable("Comido").SetValue(false);
 		GetComponent<BehaviorTree>().GetVariable("Regado").SetValue(false);

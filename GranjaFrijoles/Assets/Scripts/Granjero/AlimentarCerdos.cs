@@ -12,7 +12,7 @@ public class AlimentarCerdos : Action
 	{
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
-		Transform[] pajas = GameManager.instance.getScenario().GetComponent<Scenario>().paja;
+		GameObject[] pajas = GameManager.instance.getScenario().GetComponent<Scenario>().paja;
 		pajaPrefab = GameManager.instance.pajaPre;
 
 
@@ -20,9 +20,9 @@ public class AlimentarCerdos : Action
 		int d = -1;
 		for(int i=0; i<pajas.Length; i++)
         {
-			if(Mathf.Abs(Vector3.SqrMagnitude(transform.position - pajas[i].transform.position)) < minDist)
+			if(pajas[i].transform.childCount > 0 && Mathf.Abs(Vector3.SqrMagnitude(transform.position - pajas[i].transform.position)) < minDist)
             {
-				minDist = Mathf.Abs(Vector3.Magnitude(transform.position - pajas[i].position));
+				minDist = Mathf.Abs(Vector3.Magnitude(transform.position - pajas[i].transform.position));
 				d = i;
 			}
         }
@@ -39,7 +39,7 @@ public class AlimentarCerdos : Action
 		{
 			if (transform.childCount < 3)
 			{
-				dest.transform.SetParent(transform);
+				dest.transform.GetChild(0).SetParent(transform);
 				dest = GameManager.instance.getPoints().GetComponent<Places>().cerdos;
 			}
             else
