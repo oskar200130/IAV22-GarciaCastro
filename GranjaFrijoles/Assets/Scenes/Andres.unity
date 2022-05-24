@@ -10706,7 +10706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &528290972
 Transform:
   m_ObjectHideFlags: 0
@@ -28014,11 +28014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b1c46e2e2a9b34198c30a16aa8dc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayDuration: 60
+  dayDuration: 500
   points: {fileID: 293672676}
   scenario: {fileID: 2010123903}
   sheepsContr: {fileID: 1796962609}
-  perro: {fileID: 0}
+  perro: {fileID: 908050447}
   light: {fileID: 2138677391}
   audioTriggersGranjero:
   - {fileID: 24184982}
