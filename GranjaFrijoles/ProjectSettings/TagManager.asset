@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AudioPerro
   - AudioGranjero
+  - PolloCamera
   layers:
   - Default
   - TransparentFX

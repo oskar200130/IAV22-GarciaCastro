@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     GameObject scenario;
     [SerializeField]
     GameObject sheepsContr;
+    [SerializeField]
+    GameObject perro;
 
     [SerializeField]
     GameObject light;
@@ -158,5 +160,10 @@ public class GameManager : MonoBehaviour
     public int getAudiosActivosPerro()
     {
         return audiosActivosPerro;
+    }
+
+    public GameObject getPerro()
+    {
+        return perro;
     }
 }

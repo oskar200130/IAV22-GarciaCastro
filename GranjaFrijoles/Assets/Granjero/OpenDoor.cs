@@ -16,6 +16,7 @@ public class OpenDoor : Action
 		GameManager.instance.getSheepsCtrl().GetComponent<OvejasController>().horaDePastar = true;
 		GameManager.instance.getSheepsCtrl().GetComponent<OvejasController>().eatToday = true;
 		fenceDoor.GetComponent<Animator>().SetBool("Open", true);
+		GameManager.instance.getPerro().GetComponent<Perro>().takeOut = true;
 		return TaskStatus.Success;
 	}
 }
