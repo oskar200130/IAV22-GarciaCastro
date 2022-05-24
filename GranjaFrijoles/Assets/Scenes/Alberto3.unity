@@ -16045,7 +16045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789002857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.4, y: 1.5873808, z: -53.77}
+  m_LocalPosition: {x: -6.8, y: 1.5873808, z: -47.32}
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
   m_Children: []
   m_Father: {fileID: 293672678}
@@ -17480,6 +17480,14 @@ PrefabInstance:
     - target: {fileID: 4607926226948414526, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_Name
       value: oveja (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
@@ -23007,6 +23015,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: oveja (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
 --- !u!1 &1161514161 stripped
@@ -23514,6 +23530,14 @@ PrefabInstance:
     - target: {fileID: 4607926226948414526, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_Name
       value: oveja
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
@@ -30023,6 +30047,14 @@ PrefabInstance:
     - target: {fileID: 4607926226948414526, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_Name
       value: oveja (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
@@ -39514,7 +39546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995547522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.55, y: 1.5873808, z: -39.04}
+  m_LocalPosition: {x: -10.33, y: 1.5873808, z: -35.76}
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
   m_Children: []
   m_Father: {fileID: 293672678}
@@ -39550,6 +39582,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4316013999964818632, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4316013999964818632, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7068515360304233260, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -42130,7 +42170,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.7057868e+23, y: 5.383381e+22, z: 0.000010513513, w: NaN}
+  m_BoundingSphereOverride: {x: 0, y: 1e-45, z: 2.86e-43, w: 1.05e-43}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

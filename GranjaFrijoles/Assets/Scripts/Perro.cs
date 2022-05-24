@@ -93,7 +93,7 @@ public class Perro : MonoBehaviour
             if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
             {
                 sheepController.followDog();
-                agente.SetDestination(routePlaces[0].position);
+                agente.SetDestination(routePlaces[routeStep-1].position);
                 routeStep++;
             }
         }
@@ -105,6 +105,7 @@ public class Perro : MonoBehaviour
                 routeStep = 0;
                 sheepController.unfollowDog();
                 sheepController.horaDePastar = false;
+                return true;
             }
         }
         return false;
@@ -134,10 +135,16 @@ public class Perro : MonoBehaviour
         lostSheep = sheepController.scapedSheep();
     }
 
-    public void catchSheep()
+    public bool catchSheep()
     {
-        lostSheep.parent = transform;
-        lostSheep.GetComponent<OvejaState>().atrapada = true;
+        if ((transform.position - lostSheep.position).magnitude <= 0.1 + agente.stoppingDistance)
+        {
+            lostSheep.parent = transform;
+            lostSheep.GetComponent<OvejaState>().atrapada = true;
+            lostSheep.GetComponent<Collider>().isTrigger = true;
+            return true;
+        }
+        return false;
     }
 
     private void wander()
@@ -171,10 +178,17 @@ public class Perro : MonoBehaviour
         return navHit.position;
     }
 
-    public void freeSheep()
+    public bool freeSheep()
     {
-        lostSheep.parent = null;
-        lostSheep.GetComponent<OvejaState>().atrapada = false;
+        if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
+        {
+            lostSheep.parent = null;
+            lostSheep.GetComponent<OvejaState>().atrapada = false;
+            lostSheep.GetComponent<OvejaState>().enEstablo = true;
+            lostSheep.GetComponent<Collider>().isTrigger = false;
+            return true;
+        }
+        return false;
     }
 
     public void Start()
