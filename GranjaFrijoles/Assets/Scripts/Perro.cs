@@ -41,6 +41,7 @@ public class Perro : MonoBehaviour
     public void Awake()
     {
         agente = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     public bool Sleeping()
