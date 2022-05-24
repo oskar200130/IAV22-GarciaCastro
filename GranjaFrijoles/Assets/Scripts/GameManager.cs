@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     GameObject perro;
     [SerializeField]
     GameObject lobo;
+    
+    [SerializeField]
+    public GameObject pajaPre;
 
     [SerializeField]
     GameObject light;

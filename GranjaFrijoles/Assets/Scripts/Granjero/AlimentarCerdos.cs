@@ -7,23 +7,27 @@ public class AlimentarCerdos : Action
 	NavMeshAgent agent;
 	Animator anim;
 	GameObject dest;
+	GameObject pajaPrefab;
 	public override void OnStart()
 	{
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animator>();
-		GameObject[] pajas = GameManager.instance.getScenario().GetComponent<Scenario>().paja;
+		Transform[] pajas = GameManager.instance.getScenario().GetComponent<Scenario>().paja;
+		pajaPrefab = GameManager.instance.pajaPre;
+
+
 		float minDist = Mathf.Infinity;
 		int d = -1;
 		for(int i=0; i<pajas.Length; i++)
         {
 			if(Mathf.Abs(Vector3.SqrMagnitude(transform.position - pajas[i].transform.position)) < minDist)
             {
-				minDist = Mathf.Abs(Vector3.Magnitude(transform.position - pajas[i].transform.position));
+				minDist = Mathf.Abs(Vector3.Magnitude(transform.position - pajas[i].position));
 				d = i;
 			}
         }
 
-		dest = pajas[d];
+		dest = pajas[d].gameObject;
 	}
 
 	public override TaskStatus OnUpdate()
