@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class Pastured : Conditional
+public class HanPastado : Conditional
 {
 	public override TaskStatus OnUpdate()
 	{

@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class OpenDoor : Action
+public class AbrirPuerta : Action
 {
 	private GameObject fenceDoor;
 	public override void OnStart()

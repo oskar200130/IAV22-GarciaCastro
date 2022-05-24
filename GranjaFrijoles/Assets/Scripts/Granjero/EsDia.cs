@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class IsDay : Conditional
+public class EsDia : Conditional
 {
 	private GameManager g;
 	public override void OnStart()

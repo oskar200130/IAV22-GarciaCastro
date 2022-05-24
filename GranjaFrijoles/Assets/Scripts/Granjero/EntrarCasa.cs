@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class EnterHouse : Action
+public class EntrarCasa : Action
 {
 	public override TaskStatus OnUpdate()
 	{

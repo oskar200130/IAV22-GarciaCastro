@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class OrchardIrrigate : Action
+public class RegarHuerto : Action
 {
 	private GameObject orch;
 	public override void OnStart()
