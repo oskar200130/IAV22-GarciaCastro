@@ -83,7 +83,9 @@ public class OvejaState : MonoBehaviour
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }
         while (((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) == 0 && enEstablo) ||
-            ((1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) == 0 && !enEstablo));
+            ((1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) == 0  &&
+            (1 << NavMesh.GetAreaFromName("CampoPerseguir") & navHit.mask) == 0 &&
+            (1 << NavMesh.GetAreaFromName("CampoEscape") & navHit.mask) == 0 && !enEstablo));
         return navHit.position;
     }
 
@@ -107,8 +109,10 @@ public class OvejaState : MonoBehaviour
         pos -= posLobo - pos;
         NavMeshHit navHit;
         NavMesh.SamplePosition(pos, out navHit, distanceWander, NavMesh.AllAreas);
-        if ((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) != 0 && enEstablo ||
-            (1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) != 0 && !enEstablo)
+        if (((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) != 0 && enEstablo) ||
+            ((1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) != 0 ||
+            (1 << NavMesh.GetAreaFromName("CampoPerseguir") & navHit.mask) != 0 ||
+            (1 << NavMesh.GetAreaFromName("CampoEscape") & navHit.mask) != 0 && !enEstablo))
             agente.SetDestination(pos);
     }
 

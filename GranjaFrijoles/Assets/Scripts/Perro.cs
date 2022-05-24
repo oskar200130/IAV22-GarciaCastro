@@ -178,7 +178,9 @@ public class Perro : MonoBehaviour
         while ((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) == 0 &&
         (1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) == 0 &&
         (1 << NavMesh.GetAreaFromName("Perro") & navHit.mask) == 0 &&
-        (1 << NavMesh.GetAreaFromName("Granja") & navHit.mask) == 0);
+        (1 << NavMesh.GetAreaFromName("Granja") & navHit.mask) == 0 &&
+        (1 << NavMesh.GetAreaFromName("CampoEscape") & navHit.mask) == 0 &&
+        (1 << NavMesh.GetAreaFromName("CampoPerseguir") & navHit.mask) == 0);
         return navHit.position;
     }
 
