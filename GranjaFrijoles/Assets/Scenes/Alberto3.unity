@@ -29785,8 +29785,8 @@ MonoBehaviour:
   scenario: {fileID: 2010123903}
   sheepsContr: {fileID: 1796962609}
   perro: {fileID: 908050447}
-  lobo: {fileID: 0}
-  pajaPre: {fileID: 0}
+  lobo: {fileID: 1211245952}
+  pajaPre: {fileID: 1286753197238973892, guid: 40cc54cdd9c04b24b9ec1c16145d154b, type: 3}
   light: {fileID: 2138677391}
   audioTriggersGranjero:
   - {fileID: 24184982}
