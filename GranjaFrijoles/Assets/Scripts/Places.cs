@@ -17,4 +17,8 @@ public class Places : MonoBehaviour
     public GameObject patrol4;
     public GameObject dogHouse;
     public GameObject door;
+    public GameObject route1;
+    public GameObject route2;
+    public GameObject route3;
+    public GameObject route4;
 }

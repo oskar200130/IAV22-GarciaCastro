@@ -73,7 +73,7 @@ public class OvejaState : MonoBehaviour
         NavMeshHit navHit;
         do
         {
-            Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
+            Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander;
             randomDirection += gameObject.transform.position;
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }
@@ -88,18 +88,19 @@ public class OvejaState : MonoBehaviour
         NavMeshHit navHit;
         do
         {
-            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander * 5;
+            randomDirection = UnityEngine.Random.insideUnitSphere * distanceWander * 10;
             randomDirection += gameObject.transform.position;
             NavMesh.SamplePosition(randomDirection, out navHit, distanceWander, NavMesh.AllAreas);
         }
-        while ((1 << NavMesh.GetAreaFromName("Pradera") & navHit.mask) == 0 );
+        while ((1 << NavMesh.GetAreaFromName("Pradera") & navHit.mask) == 0);
         agente.SetDestination(navHit.position);
         sheepIsLost();
+        enEstablo = false;
     }
 
-    public void sheepIsLost()
-    {
-        dog.GetComponent<Perro>().sheepIsLost = true;
+    public void sheepIsLost()
+    {
+        dog.GetComponent<Perro>().sheepIsLost = true;
     }
 
     public void escapeWolf()
@@ -109,7 +110,7 @@ public class OvejaState : MonoBehaviour
         pos -= posLobo - pos;
         NavMeshHit navHit;
         NavMesh.SamplePosition(pos, out navHit, distanceWander, NavMesh.AllAreas);
-        if ((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) != 0 && enEstablo ||
+        if ((1 << NavMesh.GetAreaFromName("Ovejas") & navHit.mask) != 0 && enEstablo ||
             (1 << NavMesh.GetAreaFromName("Campo") & navHit.mask) != 0 && !enEstablo)
             agente.SetDestination(pos);
     }
