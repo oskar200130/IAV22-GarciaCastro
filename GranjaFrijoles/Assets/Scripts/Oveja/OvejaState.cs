@@ -27,6 +27,7 @@ public class OvejaState : MonoBehaviour
 
     private NavMeshAgent agente;
     private Transform[] randPoints = new Transform[8];
+    private bool pointIn = false;
 
     public void Awake()
     {
@@ -57,6 +58,13 @@ public class OvejaState : MonoBehaviour
     public bool doorOpen()
     {
         return controller.doorOpen;
+    }
+
+    public Vector3 aroundDog()
+    {
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * (distanceWander - 6);
+        randomDirection += dog.transform.position;
+        return randomDirection;
     }
 
     public void wander()
