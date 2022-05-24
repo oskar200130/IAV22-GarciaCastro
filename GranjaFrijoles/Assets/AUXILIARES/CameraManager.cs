@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Camera main, pollo;
+    public Camera main, pollo, granjero, pollo2;
 
     // Referencia al pollo para cambiar la camara
     [SerializeField]
@@ -19,7 +19,8 @@ public class CameraManager : MonoBehaviour
     {
         main.enabled = true;
         pollo.enabled = false;
-        //polloRef.setCamera(main);
+        granjero.enabled = false;
+        pollo2.enabled = false;
     }
 
     void Update()
@@ -28,24 +29,30 @@ public class CameraManager : MonoBehaviour
         {
             main.enabled = true;
             pollo.enabled = false;
-            //polloRef.setCamera(main);
+            granjero.enabled = false;
+            pollo2.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             main.enabled = false;
             pollo.enabled = true;
-            //polloRef.setCamera(pollo);
+            granjero.enabled = false;
+            pollo2.enabled = false;
         }
-        //else if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    main.enabled = false;
-        //    pollo.enabled = false;
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Alpha4))
-        //{
-        //    main.enabled = false;
-        //    pollo.enabled = false;
-        //}
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            main.enabled = false;
+            pollo.enabled = false;
+            granjero.enabled = true;
+            pollo2.enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            main.enabled = false;
+            pollo.enabled = false;
+            granjero.enabled = false;
+            pollo2.enabled = true;
+        }
     }
 }
 
