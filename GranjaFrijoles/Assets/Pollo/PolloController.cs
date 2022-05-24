@@ -24,6 +24,9 @@ public class PolloController : MonoBehaviour
     Animator anim;
     bool walk = false;
 
+    // Camara Actual
+    Camera actualCam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,9 +93,9 @@ public class PolloController : MonoBehaviour
 
     }
 
-    void Interact()
+    public void setCamera(Camera cam)
     {
-
+        actualCam = cam;
     }
 
 }

@@ -10812,6 +10812,8 @@ MonoBehaviour:
   sePuedeCogerComida: 0
   sePuedeHacerRuido: 0
   huerto: {fileID: 1353960939}
+  ovejas: {fileID: 0}
+  puerta: {fileID: 0}
 --- !u!82 &560573522
 AudioSource:
   m_ObjectHideFlags: 0

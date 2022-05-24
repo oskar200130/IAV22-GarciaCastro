@@ -15,6 +15,14 @@ public class PolloInteract : MonoBehaviour
     [SerializeField]
     Huerto_Behaviour huerto;
 
+    // Referencia al controlador de ovejas
+    [SerializeField]
+    OvejasController ovejas;
+
+    // A la puerta
+    [SerializeField]
+    GameObject puerta;
+
     // Para guardarnos la comida
     Transform paja;
 
@@ -53,6 +61,14 @@ public class PolloInteract : MonoBehaviour
                     soltarComida();
             }
         }
+        else if (sePuedeAbrir)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                abrirPuerta();
+                Debug.Log("PuertaAbierta");
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -82,5 +98,15 @@ public class PolloInteract : MonoBehaviour
     public void setAudioTrigger(GameObject au)
     {
         audioTrigger = au;
+    }
+
+    void abrirPuerta()
+    {
+        if(!ovejas.doorOpen)
+        {
+            ovejas.doorOpen = true;
+            ovejas.horaDePastar = true;
+            puerta.GetComponent<Animator>().SetBool("Open", true);
+        }
     }
 }
