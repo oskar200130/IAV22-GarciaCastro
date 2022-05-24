@@ -10,10 +10,13 @@ public class Lobo : MonoBehaviour
     public bool visto = false;
     GameObject ovejaObjetivo;
     NavMeshAgent agente;
+    Animator anim;
+    bool walk = false;
 
     private void Start()
     {
         agente = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     public bool EsDeDia()
@@ -65,5 +68,20 @@ public class Lobo : MonoBehaviour
         ovejaObjetivo.transform.SetParent(null);
         Ovejas.Remove(ovejaObjetivo);
         ovejaObjetivo = null;
+    }
+
+    public void Update()
+    {
+        // Animator
+        if (agente.enabled && agente.velocity.magnitude > 0.1 && !walk)
+        {
+            anim.SetBool("walking", true);
+            walk = true;
+        }
+        else if (walk)
+        {
+            anim.SetBool("walking", false);
+            walk = false;
+        }
     }
 }

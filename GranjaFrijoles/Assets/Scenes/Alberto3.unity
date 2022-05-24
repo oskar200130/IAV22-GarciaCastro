@@ -7313,6 +7313,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6270156430152513224, guid: 79463a5f43e54684fa47fd079ade5a90, type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79463a5f43e54684fa47fd079ade5a90, type: 3}
 --- !u!4 &346298824 stripped
@@ -18066,7 +18070,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3689518662240891688, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: dog
@@ -18080,6 +18088,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1796962610}
+    - target: {fileID: 3689518662240891688, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: distanceWander
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3799196205129860740, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -18130,7 +18142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_StoppingDistance
@@ -23650,7 +23662,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3689518662240891688, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: dog
@@ -23664,6 +23680,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1796962610}
+    - target: {fileID: 3689518662240891688, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: distanceWander
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3799196205129860740, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -23714,7 +23734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_StoppingDistance
@@ -24269,7 +24289,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_IsKinematic
@@ -24287,6 +24307,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1796962610}
+    - target: {fileID: 3689518662240891688, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: distanceWander
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3799196205129860740, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -24297,7 +24321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3799196205129860740, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.07
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3799196205129860740, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24337,7 +24361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_StoppingDistance
@@ -24999,6 +25023,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2405245488031783706, guid: 79463a5f43e54684fa47fd079ade5a90, type: 3}
   m_PrefabInstance: {fileID: 346298823}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1211245953
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211245952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &1219039989
 GameObject:
   m_ObjectHideFlags: 0
@@ -31120,11 +31157,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3689518662240891684, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3689518662240891688, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: dog
@@ -31138,6 +31175,10 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1796962610}
+    - target: {fileID: 3689518662240891688, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
+      propertyPath: distanceWander
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3799196205129860740, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -31188,7 +31229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7316152288465002495, guid: 24e28a7e5a986bb45aef4455f2e4dcbd, type: 3}
       propertyPath: m_StoppingDistance
@@ -41319,7 +41360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4316013999964818632, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
       propertyPath: m_Speed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4316013999964818632, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
       propertyPath: m_StoppingDistance
@@ -41378,9 +41419,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 346298824}
     - target: {fileID: 7927512336805776932, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
+      propertyPath: timer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927512336805776932, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
       propertyPath: chicken
       value: 
       objectReference: {fileID: 560573521}
+    - target: {fileID: 7927512336805776932, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
+      propertyPath: distanciaVista
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7927512336805776932, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
       propertyPath: sheepController
       value: 
@@ -44060,7 +44109,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: NaN, z: 0, w: NaN}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
