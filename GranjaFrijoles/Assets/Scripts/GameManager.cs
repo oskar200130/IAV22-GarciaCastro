@@ -154,6 +154,25 @@ public class GameManager : MonoBehaviour
         a.GetComponent<MeshRenderer>().material = MatAudio2; 
     }
 
+    public void deactivatePerroAudioTrigger()
+    {
+        audiosActivosPerro = 0;
+        for (int i = 0; i < audioTriggersPerro.Length; i++)
+        {
+            audioTriggersPerro[i].SetActive(false);
+            audioTriggersPerro[i].GetComponent<MeshRenderer>().material = MatAudio1;
+        }
+    }
+
+    public void deactivateGranjeroAudioTrigger()
+    {
+        audiosActivosGranjero = 0;
+        for (int i = 0; i < audioTriggersGranjero.Length; i++)
+        {
+            audioTriggersGranjero[i].SetActive(false);
+            audioTriggersGranjero[i].GetComponent<MeshRenderer>().material = MatAudio1;
+        }
+    }
     // Esto lo suyo es que se use en la maquina de estados del perro o granjero
     public int getAudiosActivosGranjero()
     {

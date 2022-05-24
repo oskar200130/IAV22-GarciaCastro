@@ -46,7 +46,10 @@ public class Perro : MonoBehaviour
     public bool Sleeping()
     {
         if (GameManager.instance.getAudiosActivosPerro() == 1)
+        {
+            GameManager.instance.deactivateDogAudioTrigger();
             return false;
+        }
         else return true;
     }
 
@@ -99,32 +102,42 @@ public class Perro : MonoBehaviour
                 routeStep++;
             }
         }
-        else if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
+        else if (routeStep == 5 && (transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
         {
             agente.SetDestination(insideEstabo.position);
             if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
             {
-                routeStep = 0;
+                routeStep++;
                 sheepController.unfollowDog();
                 sheepController.horaDePastar = false;
-                return true;
+                agente.SetDestination(door.position);
             }
+        }
+        else if ((transform.position - agente.destination).magnitude <= 0.1 + agente.stoppingDistance)
+        {
+            sheepController.doorOpen = false;
+            sheepController.horaDePastar = false;
+            GameManager.instance.getScenario().GetComponent<Scenario>().fenceDoor.GetComponent<Animator>().SetBool("Open", false);
+            takeOut = false;
+            routeStep = 0;
+            return true;
         }
         return false;
     }
 
     public bool seeWolf()
     {
+        NavMeshHit navHit;
         Vector3 pos = transform.position;
         Vector3 posLobo = lobo.transform.position;
+        NavMesh.SamplePosition(posLobo, out navHit, distanceWander, NavMesh.AllAreas);
         pos.y += 0.5f;
         posLobo.y += 0.5f;
         double fwdAngle = Vector3.Angle(transform.forward, posLobo - pos);
-
-        if (fwdAngle < anguloVistaHorizontal && Vector3.Magnitude(pos - posLobo) <= distanciaVista)
+        if (fwdAngle < anguloVistaHorizontal && Vector3.Magnitude(pos - posLobo) <= distanciaVista && (1 << NavMesh.GetAreaFromName("CampoEscape") & navHit.mask) == 0)
         {
             RaycastHit vista;
-            if (Physics.Raycast(pos, posLobo - pos, out vista, Mathf.Infinity) && vista.collider.gameObject == lobo)
+            if (Physics.Raycast(pos, posLobo - pos, out vista, Mathf.Infinity) && vista.collider.gameObject == lobo.gameObject)
             {
                 lobo.gameObject.GetComponent<Lobo>().visto = true;
                 return true;
