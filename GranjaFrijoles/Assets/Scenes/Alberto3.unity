@@ -29828,7 +29828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b1c46e2e2a9b34198c30a16aa8dc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayDuration: 240
+  dayDuration: 150
   points: {fileID: 293672676}
   scenario: {fileID: 2010123903}
   sheepsContr: {fileID: 1796962609}
@@ -41882,7 +41882,7 @@ PrefabInstance:
       objectReference: {fileID: 346298824}
     - target: {fileID: 7927512336805776932, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
       propertyPath: timer
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7927512336805776932, guid: 0cfcdbef16745124580044efff0737c1, type: 3}
       propertyPath: chicken
