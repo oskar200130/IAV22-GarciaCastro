@@ -11,6 +11,7 @@ public class ExitHouse : Action
 
 	public override TaskStatus OnUpdate()
 	{
+		GetComponent<BehaviorTree>().GetVariable("Dormido").SetValue(false);
 		transform.GetChild(1).transform.gameObject.SetActive(true);
 		return TaskStatus.Success;
 	}

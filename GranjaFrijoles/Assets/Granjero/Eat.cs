@@ -11,7 +11,7 @@ public class Eat : Action
 
 	public override TaskStatus OnUpdate()
 	{
-		GetComponent<BehaviorTree>().GetVariable("Eaten").SetValue(true);
+		GetComponent<BehaviorTree>().GetVariable("Comido").SetValue(true);
 		return TaskStatus.Success;
 	}
 }

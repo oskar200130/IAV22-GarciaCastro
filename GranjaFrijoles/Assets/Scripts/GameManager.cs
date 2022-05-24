@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     GameObject sheepsContr;
     [SerializeField]
     GameObject perro;
+    [SerializeField]
+    GameObject lobo;
 
     [SerializeField]
     GameObject light;
@@ -165,5 +167,9 @@ public class GameManager : MonoBehaviour
     public GameObject getPerro()
     {
         return perro;
+    }
+    public GameObject getLobo()
+    {
+        return lobo;
     }
 }
