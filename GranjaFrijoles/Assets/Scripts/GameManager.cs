@@ -63,6 +63,11 @@ public class GameManager : MonoBehaviour
     public GameObject getScenario() { return scenario; }
     public GameObject getSheepsCtrl() { return sheepsContr; }
 
+    public void destroyGameObject(GameObject o)
+    {
+        Destroy(o);
+    }
+
     private void Update()
     {
         ActualizaDia();

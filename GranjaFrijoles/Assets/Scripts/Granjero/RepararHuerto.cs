@@ -7,7 +7,7 @@ public class RepararHuerto : Action
 	private GameObject orch;
 	public override void OnStart()
 	{
-		orch = GameManager.instance.getScenario().GetComponent<Scenario>().orchard;
+		orch = GameManager.instance.getScenario().GetComponent<Scenario>().huerto;
 	}
 
 	public override TaskStatus OnUpdate()
