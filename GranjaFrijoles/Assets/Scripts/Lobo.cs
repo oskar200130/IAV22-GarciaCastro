@@ -7,6 +7,7 @@ public class Lobo : MonoBehaviour
 {
     public GameObject Cueva;
     public List<GameObject> Ovejas;
+    public bool visto = false;
     GameObject ovejaObjetivo;
     NavMeshAgent agente;
 
@@ -29,8 +30,7 @@ public class Lobo : MonoBehaviour
 
     public bool Visto()
     {
-        // Devolverá true si el lobo tiene que huir del perro/granjero
-        return false;
+        return visto;
     }
 
     public bool TieneOveja()
@@ -51,7 +51,7 @@ public class Lobo : MonoBehaviour
 
     public void CogeOveja()
     {
-        if(Vector3.Distance(transform.position, GetOvejaPos()) < 1)
+        if(Vector3.Distance(transform.position, GetOvejaPos()) < 2)
         {
             ovejaObjetivo.transform.parent = transform;
             ovejaObjetivo.GetComponent<OvejaState>().atrapada = true;

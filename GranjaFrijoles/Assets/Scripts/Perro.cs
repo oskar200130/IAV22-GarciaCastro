@@ -124,9 +124,11 @@ public class Perro : MonoBehaviour
             RaycastHit vista;
             if (Physics.Raycast(pos, posLobo - pos, out vista, Mathf.Infinity) && vista.collider.gameObject == lobo)
             {
+                lobo.gameObject.GetComponent<Lobo>().visto = true;
                 return true;
             }
         }
+        lobo.gameObject.GetComponent<Lobo>().visto = false;
         return false;
     }
 
