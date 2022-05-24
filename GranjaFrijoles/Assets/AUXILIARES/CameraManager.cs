@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Camera main, pollo, granjero, pollo2, perro, lobo;
+    public Camera main, pollo, granjero, pollo2, perro, lobo, campo, libre;
 
     // Referencia al pollo para cambiar la camara
     [SerializeField]
@@ -23,6 +23,8 @@ public class CameraManager : MonoBehaviour
         pollo2.enabled = false;
         perro.enabled = false;
         lobo.enabled = false;
+        campo.enabled = false;
+        libre.enabled = false;
     }
 
     void Update()
@@ -35,6 +37,8 @@ public class CameraManager : MonoBehaviour
             pollo2.enabled = false;
             perro.enabled = false;
             lobo.enabled = false;
+            campo.enabled = false;
+            libre.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -44,6 +48,8 @@ public class CameraManager : MonoBehaviour
             pollo2.enabled = false;
             perro.enabled = false;
             lobo.enabled = false;
+            campo.enabled = false;
+            libre.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -53,6 +59,8 @@ public class CameraManager : MonoBehaviour
             pollo2.enabled = false;
             perro.enabled = false;
             lobo.enabled = false;
+            campo.enabled = false;
+            libre.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -62,6 +70,8 @@ public class CameraManager : MonoBehaviour
             pollo2.enabled = true;
             perro.enabled = false;
             lobo.enabled = false;
+            campo.enabled = false;
+            libre.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
@@ -71,6 +81,8 @@ public class CameraManager : MonoBehaviour
             pollo2.enabled = false;
             perro.enabled = true;
             lobo.enabled = false;
+            campo.enabled = false;
+            libre.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha6))
         {
@@ -80,6 +92,30 @@ public class CameraManager : MonoBehaviour
             pollo2.enabled = false;
             perro.enabled = false;
             lobo.enabled = true;
+            campo.enabled = false;
+            libre.enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            main.enabled = false;
+            pollo.enabled = false;
+            granjero.enabled = false;
+            pollo2.enabled = false;
+            perro.enabled = false;
+            lobo.enabled = false;
+            campo.enabled = true;
+            libre.enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            main.enabled = false;
+            pollo.enabled = false;
+            granjero.enabled = false;
+            pollo2.enabled = false;
+            perro.enabled = false;
+            lobo.enabled = false;
+            campo.enabled = false;
+            libre.enabled = true;
         }
     }
 }
