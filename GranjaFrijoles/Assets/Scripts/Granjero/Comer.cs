@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class Eat : Action
+public class Comer : Action
 {
 	public override void OnStart()
 	{

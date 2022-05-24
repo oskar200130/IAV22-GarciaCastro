@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class ExitHouse : Action
+public class SalirCasa : Action
 {
 	public override void OnStart()
 	{

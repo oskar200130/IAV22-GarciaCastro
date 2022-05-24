@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class HadEaten : Conditional
+public class HaComido : Conditional
 {
 	public override TaskStatus OnUpdate()
 	{

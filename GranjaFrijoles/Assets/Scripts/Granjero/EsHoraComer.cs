@@ -2,7 +2,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class IsMeetTime : Conditional
+public class EsHoraComer : Conditional
 {
 	private GameManager g;
 	public override void OnStart()
