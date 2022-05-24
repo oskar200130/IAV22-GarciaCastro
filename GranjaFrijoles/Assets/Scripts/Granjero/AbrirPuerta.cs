@@ -7,7 +7,7 @@ public class AbrirPuerta : Action
 	private GameObject fenceDoor;
 	public override void OnStart()
 	{
-		fenceDoor = GameManager.instance.getScenario().GetComponent<Scenario>().fenceDoor;
+		fenceDoor = GameManager.instance.getScenario().GetComponent<Scenario>().puertaValla;
 	}
 
 	public override TaskStatus OnUpdate()

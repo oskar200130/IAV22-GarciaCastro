@@ -105,8 +105,8 @@ public class PolloInteract : MonoBehaviour
         if(!ovejas.doorOpen)
         {
             ovejas.doorOpen = true;
-            ovejas.horaDePastar = true;
             puerta.GetComponent<Animator>().SetBool("Open", true);
+            Debug.Log("Vas?");
         }
     }
 }

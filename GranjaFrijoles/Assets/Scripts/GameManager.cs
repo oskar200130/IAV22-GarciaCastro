@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     GameObject perro;
     [SerializeField]
     GameObject lobo;
+    
+    [SerializeField]
+    public GameObject pajaPre;
 
     [SerializeField]
     GameObject light;
@@ -63,6 +66,11 @@ public class GameManager : MonoBehaviour
     public GameObject getScenario() { return scenario; }
     public GameObject getSheepsCtrl() { return sheepsContr; }
 
+    public void destroyGameObject(GameObject o)
+    {
+        Destroy(o);
+    }
+
     private void Update()
     {
         ActualizaDia();
@@ -79,7 +87,7 @@ public class GameManager : MonoBehaviour
             day = false;
             meet = false;
         }
-        if (actualTime >= dayDuration / 4)
+        else if (actualTime >= dayDuration / 4)
         {
             meet = true;
         }
@@ -164,6 +172,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void resetPajas()
+    {
+        GameObject[] pajas = scenario.GetComponent<Scenario>().paja;
+        for (int i=0; i<pajas.Length; i++)
+        {
+            if(pajas[i].transform.childCount == 0)
+            {
+                Instantiate(pajaPre, pajas[i].transform);
+            }
+        }
+    }
     public void deactivateGranjeroAudioTrigger()
     {
         audiosActivosGranjero = 0;

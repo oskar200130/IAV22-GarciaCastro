@@ -10,7 +10,7 @@ public class RecuperarOveja : Action
     public override void OnStart()
     {
         agent = GetComponent<NavMeshAgent>();
-        dest = GameManager.instance.getPoints().GetComponent<Places>().insideEstablo;
+        dest = GameManager.instance.getPoints().GetComponent<Places>().dentroEstablo;
     }
 
     public override TaskStatus OnUpdate()
@@ -26,7 +26,7 @@ public class RecuperarOveja : Action
             if (transform.childCount > 2)
             {
                 transform.GetChild(2).SetParent(null);
-                dest = GameManager.instance.getPoints().GetComponent<Places>().fenceDoor;
+                dest = GameManager.instance.getPoints().GetComponent<Places>().puertaValla;
                 agent.SetDestination(dest.transform.position);
             }
             else

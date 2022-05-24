@@ -27,6 +27,7 @@ public class OvejaState : MonoBehaviour
 
     private NavMeshAgent agente;
     private Transform[] randPoints = new Transform[8];
+    private bool pointIn = false;
 
     public void Awake()
     {
@@ -57,6 +58,13 @@ public class OvejaState : MonoBehaviour
     public bool doorOpen()
     {
         return controller.doorOpen;
+    }
+
+    public Vector3 aroundDog()
+    {
+        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * (distanceWander - 6);
+        randomDirection += dog.transform.position;
+        return randomDirection;
     }
 
     public void wander()
@@ -138,7 +146,7 @@ public class OvejaState : MonoBehaviour
     {
         controller.pushToOvejas(transform);
         Places p = GameManager.instance.getPoints().GetComponent<Places>();
-        randPoints[0] = p.campSide.transform;
+        randPoints[0] = p.campo.transform;
         randPoints[1] = p.patrol1.transform;
         randPoints[2] = p.patrol2.transform;
         randPoints[3] = p.patrol3.transform;
