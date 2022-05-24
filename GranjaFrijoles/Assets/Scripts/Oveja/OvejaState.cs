@@ -15,6 +15,8 @@ public class OvejaState : MonoBehaviour
     [Range(0, 180)]
     public double anguloVistaHorizontal;   // Distancia maxima de vision
     public double distanciaVista;
+    Animator anim;
+    bool walk = false;
 
     public bool closestToDoor { get; set; }
     public bool enEstablo { get; set; } = true;
@@ -29,7 +31,9 @@ public class OvejaState : MonoBehaviour
     public void Awake()
     {
         agente = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
+
 
     public bool loboCerca()
     {
@@ -111,6 +115,19 @@ public class OvejaState : MonoBehaviour
     public void Update()
     {
         pastar = controller.horaDePastar;
+
+        // Animator
+        if(agente.enabled && agente.velocity.magnitude > 0.1 && !walk)
+        {
+            anim.SetBool("walking", true);
+            walk = true;
+        }
+        else if(walk)
+        {
+            anim.SetBool("walking", false);
+            walk = false;
+        }
+
     }
 
     public void Start()
@@ -130,5 +147,14 @@ public class OvejaState : MonoBehaviour
     public bool escaped()
     {
         return !enEstablo && !pastar;
+    }
+
+    public void setAnimIdle()
+    {
+        //anim.SetBool("walking", false);
+    }
+    public void setAnimWal()
+    {
+        //anim.SetBool("walking", true);
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    public Camera main, pollo, granjero, pollo2;
+    public Camera main, pollo, granjero, pollo2, perro, lobo;
 
     // Referencia al pollo para cambiar la camara
     [SerializeField]
@@ -21,6 +21,8 @@ public class CameraManager : MonoBehaviour
         pollo.enabled = false;
         granjero.enabled = false;
         pollo2.enabled = false;
+        perro.enabled = false;
+        lobo.enabled = false;
     }
 
     void Update()
@@ -31,6 +33,8 @@ public class CameraManager : MonoBehaviour
             pollo.enabled = false;
             granjero.enabled = false;
             pollo2.enabled = false;
+            perro.enabled = false;
+            lobo.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -38,6 +42,8 @@ public class CameraManager : MonoBehaviour
             pollo.enabled = true;
             granjero.enabled = false;
             pollo2.enabled = false;
+            perro.enabled = false;
+            lobo.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -45,6 +51,8 @@ public class CameraManager : MonoBehaviour
             pollo.enabled = false;
             granjero.enabled = true;
             pollo2.enabled = false;
+            perro.enabled = false;
+            lobo.enabled = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -52,6 +60,26 @@ public class CameraManager : MonoBehaviour
             pollo.enabled = false;
             granjero.enabled = false;
             pollo2.enabled = true;
+            perro.enabled = false;
+            lobo.enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            main.enabled = false;
+            pollo.enabled = false;
+            granjero.enabled = false;
+            pollo2.enabled = false;
+            perro.enabled = true;
+            lobo.enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            main.enabled = false;
+            pollo.enabled = false;
+            granjero.enabled = false;
+            pollo2.enabled = false;
+            perro.enabled = false;
+            lobo.enabled = true;
         }
     }
 }

@@ -23,6 +23,8 @@ public class Perro : MonoBehaviour
     private NavMeshAgent agente;
     private bool arrived = true;
     private Vector3 pos = new Vector3();
+    Animator anim;
+    bool walk = false;
 
     public Transform[] patrolPlaces { get; set; } = new Transform[4]; 
     private Transform[] routePlaces { get; set; } = new Transform[4]; 
@@ -209,5 +211,20 @@ public class Perro : MonoBehaviour
         routePlaces[2] = p.route3.transform;
         routePlaces[3] = p.route4.transform;
 
+    }
+
+    public void Update()
+    {
+        // Animator
+        if (agente.enabled && agente.velocity.magnitude > 0.1 && !walk)
+        {
+            anim.SetBool("walking", true);
+            walk = true;
+        }
+        else if (walk)
+        {
+            anim.SetBool("walking", false);
+            walk = false;
+        }
     }
 }
