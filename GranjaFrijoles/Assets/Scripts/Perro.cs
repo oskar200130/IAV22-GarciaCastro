@@ -48,7 +48,7 @@ public class Perro : MonoBehaviour
     {
         if (GameManager.instance.getAudiosActivosPerro() == 1)
         {
-            GameManager.instance.deactivateDogAudioTrigger();
+            GameManager.instance.deactivatePerroAudioTrigger();
             return false;
         }
         else return true;
@@ -118,7 +118,7 @@ public class Perro : MonoBehaviour
         {
             sheepController.doorOpen = false;
             sheepController.horaDePastar = false;
-            GameManager.instance.getScenario().GetComponent<Scenario>().fenceDoor.GetComponent<Animator>().SetBool("Open", false);
+            GameManager.instance.getScenario().GetComponent<Scenario>().puertaValla.GetComponent<Animator>().SetBool("Open", false);
             takeOut = false;
             routeStep = 0;
             return true;
