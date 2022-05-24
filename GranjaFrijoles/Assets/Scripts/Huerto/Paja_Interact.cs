@@ -33,6 +33,7 @@ public class Paja_Interact : MonoBehaviour
         if (other.GetComponent<PolloInteract>())
         {
             other.GetComponent<PolloInteract>().sePuedeCogerComida = false;
+            other.GetComponent<PolloInteract>().unsetComida();
         }
     }
 }

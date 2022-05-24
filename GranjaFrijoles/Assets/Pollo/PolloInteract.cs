@@ -54,11 +54,11 @@ public class PolloInteract : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                conComida = !conComida;
                 if (!conComida)
                     cogerComida();
                 else
                     soltarComida();
+                conComida = !conComida;
             }
         }
         else if (sePuedeAbrir)
@@ -94,6 +94,10 @@ public class PolloInteract : MonoBehaviour
     public void setComida(Transform com)
     {
         paja = com;
+    }
+    public void unsetComida()
+    {
+        paja = null;
     }
     public void setAudioTrigger(GameObject au)
     {
