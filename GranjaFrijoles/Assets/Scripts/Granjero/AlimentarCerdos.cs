@@ -20,14 +20,14 @@ public class AlimentarCerdos : Action
 		int d = -1;
 		for(int i=0; i<pajas.Length; i++)
         {
-			if(pajas[i].transform.childCount > 0 && Mathf.Abs(Vector3.SqrMagnitude(transform.position - pajas[i].transform.position)) < minDist)
+			if(pajas[i].transform.childCount > 0 && Mathf.Abs(Vector3.SqrMagnitude(transform.position - pajas[i].transform.GetChild(0).position)) < minDist)
             {
 				minDist = Mathf.Abs(Vector3.Magnitude(transform.position - pajas[i].transform.position));
 				d = i;
 			}
         }
 
-		dest = pajas[d].gameObject;
+		dest = pajas[d].gameObject.transform.GetChild(0).gameObject;
 	}
 
 	public override TaskStatus OnUpdate()
@@ -39,7 +39,7 @@ public class AlimentarCerdos : Action
 		{
 			if (transform.childCount < 3)
 			{
-				dest.transform.GetChild(0).SetParent(transform);
+				dest.transform.SetParent(transform);
 				dest = GameManager.instance.getPoints().GetComponent<Places>().cerdos;
 			}
             else

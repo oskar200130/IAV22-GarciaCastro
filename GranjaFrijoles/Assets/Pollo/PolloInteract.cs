@@ -19,6 +19,8 @@ public class PolloInteract : MonoBehaviour
     [SerializeField]
     OvejasController ovejas;
 
+    Transform anteriorPadrePaja; 
+
     // A la puerta
     [SerializeField]
     GameObject puerta;
@@ -87,17 +89,20 @@ public class PolloInteract : MonoBehaviour
     }
     void soltarComida()
     {
-        paja.SetParent(null);
+        paja.SetParent(anteriorPadrePaja);
+        anteriorPadrePaja = null;
         paja = null;
         Debug.Log("Man");
     }
     public void setComida(Transform com)
     {
+        anteriorPadrePaja = com.parent;
         paja = com;
     }
     public void unsetComida()
     {
         paja = null;
+        anteriorPadrePaja = null;
     }
     public void setAudioTrigger(GameObject au)
     {
