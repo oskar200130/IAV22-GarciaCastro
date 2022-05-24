@@ -27,9 +27,9 @@ NavMeshProjectSettings:
     cost: 1
   - name: Cueva
     cost: 1
-  - name: 
+  - name: CampoPerseguir
     cost: 1
-  - name: 
+  - name: CampoEscape
     cost: 1
   - name: 
     cost: 1
