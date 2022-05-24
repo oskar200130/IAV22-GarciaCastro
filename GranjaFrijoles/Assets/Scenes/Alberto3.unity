@@ -12555,7 +12555,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: efe17d11790f16c43bfccc913eb4a3ea, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: efe17d11790f16c43bfccc913eb4a3ea, type: 3}
       propertyPath: m_LocalScale.x
@@ -28416,6 +28416,7 @@ MonoBehaviour:
   scenario: {fileID: 2010123903}
   sheepsContr: {fileID: 1796962609}
   perro: {fileID: 908050447}
+  lobo: {fileID: 0}
   light: {fileID: 2138677391}
   audioTriggersGranjero:
   - {fileID: 24184982}
@@ -28996,7 +28997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455318117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.27, y: 1.5873808, z: -0.93}
+  m_LocalPosition: {x: 3.78, y: 1.5873808, z: -1.34}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 293672678}
@@ -42306,9 +42307,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: granjero
       objectReference: {fileID: 0}
+    - target: {fileID: 5199772349815706468, guid: b0cc4df56eedc454386f7a38123d22c3, type: 3}
+      propertyPath: mBehaviorSource.behaviorName
+      value: FarmerBehaviour
+      objectReference: {fileID: 0}
     - target: {fileID: 5738698744680417950, guid: b0cc4df56eedc454386f7a38123d22c3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5738698744680417950, guid: b0cc4df56eedc454386f7a38123d22c3, type: 3}
       propertyPath: m_LocalPosition.x
