@@ -197,11 +197,24 @@ El último agente que queda por comentar paso a paso es el perro.
 También hemos pensado en una máquina de estados:
 ![alt text](https://raw.githubusercontent.com/oskar200130/IAV22-GarciaCastro/main/ImagenesDocu/perroSM.png)
 
+## Requisitos
+A - Tener un NavMesh por zonas funcional, por el que se puedan mover los diferentes agentes, con sus respectivas restricciones.
+B - Tener un ciclo día-noche que haga que los agentes cambies sus rutinas.
+C - El granjero cumple sus rutinas y reacciona a las interrupciones de la gallina.
+D - El perro cumple sus rutinas y reacciona a las interrupciones de la gallina.
+E - Las ovejas cumplen sus rutinas y reaccionan a las interrupciones de la gallina.
+F - El lobo cumple sus rutinas y reacciona a las interrupciones del perro y granjero.
+G - La gallina es capaz de interactuar con el entorno cambiando los comportamientos de los demás agentes.
+H - El proyecto tiene un sistema de debug para observar a los diferentes agentes por teclas.
+
 
 ## REFERENCIAS Y ASSETS
 https://sketchfab.com/3d-models/chicken-rigged-6e3b93c078114c52bfe4cfa08b9843eb
 https://sketchfab.com/3d-models/low-poly-sheep-20ef523bee784e4a939b4c5f8734edfc
 https://sketchfab.com/3d-models/farmer-low-poly-2d913738203a49dfb4b30e7f4633e75f
+https://sketchfab.com/3d-models/werewolf-451d0af45af74892b119eabed444fa04
+https://sketchfab.com/3d-models/dog-2d69b8134a2e43888ee4fbef224763b4
+https://sketchfab.com/3d-models/barn-528b7b55db9b47e0a8129b50717f0cdd#download
 
 
 
